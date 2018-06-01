@@ -1,0 +1,2 @@
+data/assembly/scaffolds.fasta.gz filter=lfs diff=lfs merge=lfs -text
+data/reads/*.fastq.gz filter=lfs diff=lfs merge=lfs -text
