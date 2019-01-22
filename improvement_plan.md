@@ -1,14 +1,5 @@
 # Teaching the bigger picture through specific exercises
 
-## Leerdoelen van practicum (Engels)
-* After this practical, you can name and explain the steps of a simple metagenomics workflow. Starting at acquiring sequencing data, all the way to annotation of individual draft genomes.
-  * You can highlight the differences between ‘regular’ genome sequencing data and assemblies versus metagenomic sequencing data and assemblies.
-  * You can replicate the workflow taken during the practical.
-  * You can explain the workflow from biological and technical perspectives when either one or both are appropriate. 
-  * You can design similar workflows for different metagenomic questions.
-  * You can explain what binning signals are, why they are used and how you used them during the practical.
-* If not already, you will understand the basics of the bash computer language and be able to run bio-informatic programmes in loops.
-
 **Probleem**: Uit tentamenvragen blijkt dat veel lln de onderdelen niet relatief ten opzichte van elkaar kunnen plaatsen en dat ze niet snappen wat de belangrijkste stappen voor een significantie hebben in het grotere geheel.
 
 **Hypothetische onderliggend mechanisme**: llnn integreren kennis van de individuele onderdelen niet tot één geheel. Uitleg van de workflow in het college, en huidige begeleiding door de onderdelen van het practicum is niet afdoende. De steile leercurve en pragmatische problemen met essentiële programmeertaal slokt alle aandacht op. Aandacht die deels ook naar het grote plaatje moet gaan. 'Cognitive load' is te hoog.
