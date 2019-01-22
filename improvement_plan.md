@@ -1,32 +1,31 @@
-Teaching the bigger picture through specific exercises
+# Teaching the bigger picture through specific exercises
 
-Leerdoelen van practicum (Engels)
-After this practical, you can name and explain the steps of a simple metagenomics workflow. Starting at acquiring sequencing data, all the way to annotation of individual draft genomes.
-You can replicate and explain the workflow taken during the practical.
-You can design similar workflows for different metagenomic questions.
-You can explain what binning signals are, why they are used and how you used them during the practical.
-If not already, you will understand the basics of the bash computer language and be able to run bio-informatic programmes in loops.
-You can highlight the differences between ‘regular’ genome sequencing data and assemblies versus metagenomic sequencing data and assemblies.
+## Leerdoelen van practicum (Engels)
+* After this practical, you can name and explain the steps of a simple metagenomics workflow. Starting at acquiring sequencing data, all the way to annotation of individual draft genomes.
+  * You can highlight the differences between ‘regular’ genome sequencing data and assemblies versus metagenomic sequencing data and assemblies.
+  * You can replicate the workflow taken during the practical.
+  * You can explain the workflow from biological and technical perspectives when either one or both are appropriate. 
+  * You can design similar workflows for different metagenomic questions.
+  * You can explain what binning signals are, why they are used and how you used them during the practical.
+* If not already, you will understand the basics of the bash computer language and be able to run bio-informatic programmes in loops.
 
-Probleem: Uit tentamenvragen blijkt dat veel lln de onderdelen niet relatief ten opzichte van elkaar kunnen plaatsen en dat ze niet snappen wat de belangrijkste stappen voor een significantie hebben in het grotere geheel.
+**Probleem**: Uit tentamenvragen blijkt dat veel lln de onderdelen niet relatief ten opzichte van elkaar kunnen plaatsen en dat ze niet snappen wat de belangrijkste stappen voor een significantie hebben in het grotere geheel.
 
-Hypothetische onderliggend mechanisme: llnn integreren kennis van de individuele onderdelen niet tot één geheel. Uitleg van de workflow in het college, en huidige begeleiding door de onderdelen van het practicum is niet afdoende. De steile leercurve en pragmatische problemen met essentiële programmeertaal slokt alle aandacht op. Aandacht die deels ook naar het grote plaatje moet gaan.
+**Hypothetische onderliggend mechanisme**: llnn integreren kennis van de individuele onderdelen niet tot één geheel. Uitleg van de workflow in het college, en huidige begeleiding door de onderdelen van het practicum is niet afdoende. De steile leercurve en pragmatische problemen met essentiële programmeertaal slokt alle aandacht op. Aandacht die deels ook naar het grote plaatje moet gaan. 'Cognitive load' is te hoog.
 
-Hoofdvraag: Is het gebruik van zelfgemaakte flowcharts vooraf en tijdens de computerpractica een doeltreffende methode om conceptueel begrip van een metagenomics pipeline te verbeteren bij eerstejaars life sciences Masters studenten in de cursus introduction to bioinformatics.
+**Hoofdvraag**: Is het gebruik van zelfgemaakte flowcharts vooraf en tijdens de computerpractica een doeltreffende methode om conceptueel begrip van een metagenomics pipeline te verbeteren bij eerstejaars life sciences Masters studenten in de cursus introduction to bioinformatics.
 
-Interventie: Na volledig college, geforceerd tekenen van overzicht workflow vooraf practicum, aanpassen gedurend practicum en inleveren aan het eind van het practicum. Zo forceer ik aandacht terug naar het grotere plaatje na elke kleine stap.
+**Interventie**: Na volledig college, geforceerd tekenen van overzicht workflow vooraf practicum, aanpassen gedurend practicum en inleveren aan het eind van het practicum. Zo forceer ik aandacht terug naar het grotere plaatje na elke kleine stap.
 
 Na elke praktische stap de llnen deze stap ofwel
 - af laten vinken in flowchart
 - als deze mist, toevoegen aan flowchart
 
-Data: tentamenvraag volgorde workflow vergelijkbaar met vorige jaren en met hun getekende workflow.
+**Data**: tentamenvraag volgorde workflow vergelijkbaar met vorige jaren en met hun getekende workflow.
 Één getekende workflow vooraf (incl. vinkjes)
 Één workflow opgebouwd tijdens het practicum (incl vinkjes).
-#Mag ik ze vragen de workflows in te leveren met naam zodat ik ze kan matchen aan tentamenvragen?
-#Hoe turf ik fout en goed als de relatieve positie belangrijker is dan de absolute positie // aanwezigheid van onderdelen.
 
-Bijkomende zaken: 
+## Bijkomende zaken: 
 variabel ingangsniveau: voorkennis toets.
 Colleges in kennisclips i.p.v. een groot college? Onderdeel van zelfstudie dag van te voren…
 Indien hoofdvraag en kennisclips succesvol, dan is begin flowchart huiswerk voor het begin van het college.
