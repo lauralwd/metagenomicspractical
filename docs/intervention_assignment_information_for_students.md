@@ -20,4 +20,4 @@ We require you to hand in your flowcharts after the practical to study them and 
 ### Consent for publication
 At some point, there is a possibility that I might use your flowcharts to publish this practical and the improvements thereupon in an educational journal. If you agree your flowcharts content can be an **anonymous** data point in such a manuscript, please check the consentbox at the bottom of the flowchart.
 
-For more information, ask the instructors of the practical or find my personel page for contact details: [Laura W Dijkhuizen](https://www.uu.nl/medewerkers/LWDijkhuizen)
+For more information, ask the instructors of the practical or find my personel page for contact details: [Laura W Dijkhuizen](https://www.uu.nl/medewerkers/LWDijkhuizen) (https://www.uu.nl/medewerkers/LWDijkhuizen)
