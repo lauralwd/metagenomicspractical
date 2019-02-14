@@ -31,8 +31,6 @@ The flowchart does not have to be correct, it only has to reflect your planning 
 <br/>
 <br/>
 <br/>
-<br/>
-
 
 I, .................................................. approve that these flowcharts may be used as an anonymous data point for scientific publication by Laura W Dijkhuizen MSc.
 \pagebreak
