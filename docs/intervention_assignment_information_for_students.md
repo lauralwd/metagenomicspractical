@@ -3,7 +3,9 @@ Welcome in today's metagenomics practical.
 While doing the practical on your laptops, you have three assignments on paper to complete as well. 
 The goal of these assignments is to improve your understanding of todays workflow by explicitly drawing relations between the steps. 
 These assignments are not graded and play no role in grading the final exam.
+
 ## Assignments
+
 ### Assignment 1
 First, before you start the workflow but after the lecture and reading the introduction, draw a flowchart of the workflow you will follow today. 
 It does not have to be complete, but it has to represent what you got from the lecture and instruction. 
@@ -23,6 +25,7 @@ Do you still understand all steps and why they matter? Be sure to discuss with e
 
 ##  Why I want to have your flowcharts
 After the practical you must hand in your flowcharts, you off course are allowed to make a copy or a photo for future reference.
+
 ### Improve the practical
 We require you to hand in your flowcharts after the practical to study them and improve the didactics of this practical. 
 Your flowcharts are important to us to understand your thinking, and based upon your work we will improve the practical for future itterations. 
