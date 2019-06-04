@@ -1,10 +1,22 @@
 # Management summary
 
 ## Introduction
-In this document I describe some of my efforts to improve a one day practical in the early Masters course 'intro to bioinformatics'. 
+In this document I describe and evaluate some of my efforts to improve a one day computer practical in the early Masters course 'intro to bioinformatics'. 
+Specifically, this is a metagenomics practical tought in April/May 2019.
+The practical teaches a workflow starting with DNA sequencing reads, and ending at listing genes and pathways in draft microbial genomes acquired from these DNA sequencing reads.
+A 1.5 hour leture elaborates on the entire workflow. 
+The 6 hour computer practical focusses on the part after meta-genome assembly until gene annotation and visualisation. 
+This focus was introduced due to computational limits.
+Learning goals of the practical are (taken from the [ReadME](https://github.com/lauralwd/metagenomicspractical/blob/master/README.md)): 
+> * After this practical, you can name and explain the steps of a simple metagenomics workflow. Starting at acquiring sequencing data, all the way to annotation of individual draft genomes.
+>   * You can highlight the differences between ‘regular’ genome sequencing data and assemblies versus metagenomic sequencing data and assemblies.
+>   * You can replicate the workflow taken during the practical.
+>   * You can explain the workflow from biological and technical perspectives when either one or both are appropriate. 
+>   * You can design similar workflows for different metagenomic questions.
+>   * You can explain what binning signals are, why they are used and how you used them during the practical.
+> * If not already, you will understand the basics of the bash computer language and be able to run bio-informatic programmes in loops.
 
---> about the practical <--
-
+### observations
 During past itterations of the course, teaching staff had noticed repeatedly that the questions of students were very technical and practical in nature. Most questions lacked the depth one would hope to achieve in a Masters course. Also many students failed a simple opening question in an open book exam that asked students to reproduce the order of steps taken in the workflow during the practical. 
 
 --> cognitive load theory <-- 
