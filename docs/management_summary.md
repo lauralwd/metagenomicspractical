@@ -15,6 +15,10 @@ Early Masters course intro to bioinformatics, one day lecture-practical combo. H
   * absolute beginners
 
 **Onderzoekbare onderwijsvraag**
+Is het gebruik van zelfgemaakte flowcharts vooraf en tijdens de computerpractica een doeltreffende methode om conceptueel begrip van een metagenomics pipeline te verbeteren bij eerstejaars life sciences Masters studenten in de cursus introduction to bioinformatics.
+
+** Research question ** 
+Is the use of self-made flowcharts before and during a computerpractical an efficient method to improve conceptual understanding of a metagenomics workflow in a class of first years Life Sciences Masters students in a course 'introduction to bioinformatics'.
 
 ## Methode
 
