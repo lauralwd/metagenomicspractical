@@ -40,10 +40,10 @@ Dutch original:
 
 ## Methods
 
-The intervention material is hosted and versioned on github, 
-a [hand-out detailing the assingment for students](https://github.com/lauralwd/metagenomicspractical/blob/8d7ff3000841746393bbdca85cb82fa94fa48e42/docs/assignment_flowchart.md) 
-and a [hand-out to draw the flowcharts on](https://github.com/lauralwd/metagenomicspractical/blob/8d7ff3000841746393bbdca85cb82fa94fa48e42/docs/fill-in_flowchart.pdf)
-Both are versions of Februari 2019.
+Both the practical and the intervention material are hosted and versioned on github.
+The intervention material of this specific itteration of the course can be found on github as well:
+* a [hand-out detailing the assingment for students](https://github.com/lauralwd/metagenomicspractical/blob/8d7ff3000841746393bbdca85cb82fa94fa48e42/docs/assignment_flowchart.md) 
+* a [hand-out to draw the flowcharts on](https://github.com/lauralwd/metagenomicspractical/blob/8d7ff3000841746393bbdca85cb82fa94fa48e42/docs/fill-in_flowchart.pdf)
 
 Welke interventie heb ik gedaan
 
