@@ -1,11 +1,18 @@
 # Management summary
 
-## Inleiding (theorie)
+## Introduction
+Early Masters course intro to bioinformatics, one day lecture-practical combo. Here I try to improve learning outcome of this one day excercise by reducing/managing student cognitive load during the practical.
 
 * Wat was de aanleiding voor het onderzoek
+  * confusion during practical
+  * low score on exam when reproducing the steps of the workflow
 * waar is mijn onderzoek een voorbeeld van (mechanisme)
+  * managing cognitive load
 * wat zegt de literatuur daarover
+  * 
 * wat is specifiek aan mijn context 
+  * one day practical
+  * absolute beginners
 
 **Onderzoekbare onderwijsvraag**
 
