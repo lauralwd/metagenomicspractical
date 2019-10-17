@@ -31,7 +31,7 @@ You activate the environment by typing:
 
 `conda avtivate metagenomics_practical`
 
-You may open the interactive jupyter notebook pages by typing:
+Make sure you learn about how conda works, it is definitely worth your time. You may open the interactive jupyter notebook pages by typing:
 
 `jupyter-notebook jupyter-notebook m1-jupyter_and_bash_basics.ipynb`
 
