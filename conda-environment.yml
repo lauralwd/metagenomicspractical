@@ -7,3 +7,7 @@ dependencies:
   - metabat2
   - checkm-genome
   - prokka
+  - jupyter
+  - cat
+  - mafft
+  - iqtree
