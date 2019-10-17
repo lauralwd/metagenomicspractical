@@ -8,8 +8,10 @@ The practical discusses a metagenomics workflow from acquiring sequencing data u
 * annotation (Prokka)
 * phylogeny reconstruction (IQTree)
 
+## Installation
+If you do this practical without any supervision, you will likely need to install the software needed, and download the data.
 I recommend, especially to beginners, to install these tools via conda.
-If you have not installed conda, please refer to the guide for miniconda installation on linux.
+If you have not installed conda, please refer to [the guide for miniconda installation on linux](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html).
 Once conda is installed, make sure you have cloned this git repository to your local linux system and navigate to that specific folder in a terminal.
 Then, you may create an environment with all software required via the following command:
 
