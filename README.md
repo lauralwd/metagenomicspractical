@@ -13,11 +13,26 @@ If you do this practical without any supervision, you will likely need to instal
 I recommend, especially to beginners, to install these tools via conda.
 If you have not installed conda, please refer to [the guide for miniconda installation on linux](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html).
 Once conda is installed, make sure you have cloned this git repository to your local linux system and navigate to that specific folder in a terminal.
+
+```
+git clone https://github.com/lauralwd/metagenomicspractical.git
+cd metagenomicspractical
+```
+
 Then, you may create an environment with all software required via the following command:
 
 `conda env create --file conda-environment.yml`
 
-You activate the environment by typing `conda avtivate metagenomics_practical`
+You activate the environment by typing:
+
+`conda avtivate metagenomics_practical`
+
+You may open the interactive jupyter notebook pages by typing:
+
+`jupyter-notebook jupyter-notebook m1-jupyter_and_bash_basics.ipynb`
+
+This opens a webbrowser showing you a jupyter notebook, if you need to download the data needed for the practical, make sure you follow the commands in `mprepare_download_and_subset_reads.ipynb`
+
 
 # Learning goals of this practical
 After this practical, you can name and explain the steps of a simple metagenomics workflow. Starting at acquiring sequencing data, all the way to annotation of individual draft genomes.
