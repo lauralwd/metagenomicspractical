@@ -1,5 +1,6 @@
 # Metagenomicspractical
-Hands-on practical for learning a metagenomics workflow aimed at Masters Students. The practical discusses a metagenomics workflow from acquiring sequencing data up to annotating binned microbial genomes. Steps up to and including assembly have already been performed for feasibility. This practical includes the following steps (and depends on the following tools):
+Hands-on practical for learning a metagenomics workflow aimed at Masters Students in Life Sciences. 
+The practical discusses a metagenomics workflow from acquiring sequencing data up to annotating binned microbial genomes. Steps up to and including assembly have already been performed for feasibility. This practical includes the following steps (and depends on the following tools):
 * backmapping (bwa+samtools)
 * binning (MetaBAT)
 * quality controll of bins (CheckM)
