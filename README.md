@@ -1,6 +1,10 @@
 # Metagenomicspractical
-Hands-on practical for learning a metagenomics workflow aimed at Masters Students in Life Sciences. 
-The practical discusses a metagenomics workflow from acquiring sequencing data up to annotating binned microbial genomes. Steps up to and including assembly have already been performed for feasibility. This practical includes the following steps (and depends on the following tools):
+This reposistory contains a practical for learning a metagenomics workflow.
+These lessons are aimed at Masters Students in Life Sciences with no or minimal bioinformatics experience.
+This practical starts by discussing a metagenomics workflow from a biological context, acquiring sequencing data and genome assembly.
+Then, you as a student take over.
+You'll extract individual microbial genomes from the metagenome assembly, check their quality, and annotate genes coded in these genomes.
+This practical includes the following steps (and depends on the following tools):
 * backmapping (bwa+samtools)
 * binning (MetaBAT)
 * quality control of bins (CheckM)
