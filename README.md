@@ -40,11 +40,11 @@ This opens a webbrowser showing you a jupyter notebook, if you need to download 
 
 # Learning goals of this practical
 After this practical, you can name and explain the steps of a simple metagenomics workflow. Starting at acquiring sequencing data, all the way to annotation of individual draft genomes.
-* You can highlight the differences between ‘regular’ genome sequencing data and assemblies versus metagenomic sequencing data and assemblies.
+* You can highlight the differences between ‘regular’ genome sequencing data and assemblies versus metagenomic sequencing data and assemblies (lecture).
 * You can replicate the workflow taken during the practical.
-* You can explain the workflow from biological and technical perspectives when either one or both are appropriate. 
+* You can explain the workflow from biological and technical perspectives when either one or both are appropriate.
 * You can design similar workflows for different metagenomic questions.
-* You can explain what binning signals are, why they are used and how you used them during the practical.
+* You can explain what binning signals are (lecture), why they are used and how you used them during the practical.
 If not already, you will understand the basics of the bash computer language and be able to run bio-informatic programmes in loops.
 
 # Credits and references
