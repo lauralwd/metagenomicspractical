@@ -18,13 +18,13 @@ Then, you may create an environment with all software required via the following
 You activate the environment by typing `conda avtivate metagenomics_practical`
 
 # Learning goals of this practical
-* After this practical, you can name and explain the steps of a simple metagenomics workflow. Starting at acquiring sequencing data, all the way to annotation of individual draft genomes.
-  * You can highlight the differences between ‘regular’ genome sequencing data and assemblies versus metagenomic sequencing data and assemblies.
-  * You can replicate the workflow taken during the practical.
-  * You can explain the workflow from biological and technical perspectives when either one or both are appropriate. 
-  * You can design similar workflows for different metagenomic questions.
-  * You can explain what binning signals are, why they are used and how you used them during the practical.
-* If not already, you will understand the basics of the bash computer language and be able to run bio-informatic programmes in loops.
+After this practical, you can name and explain the steps of a simple metagenomics workflow. Starting at acquiring sequencing data, all the way to annotation of individual draft genomes.
+* You can highlight the differences between ‘regular’ genome sequencing data and assemblies versus metagenomic sequencing data and assemblies.
+* You can replicate the workflow taken during the practical.
+* You can explain the workflow from biological and technical perspectives when either one or both are appropriate. 
+* You can design similar workflows for different metagenomic questions.
+* You can explain what binning signals are, why they are used and how you used them during the practical.
+If not already, you will understand the basics of the bash computer language and be able to run bio-informatic programmes in loops.
 
 # Credits and references
 Original practical (version 2017) was made By Margo Schuller and Laura Dijkhuizen. Current version was improved thereupon by [Laura Dijkhuizen](https://www.uu.nl/medewerkers/LWDijkhuizen). The practical is based on a subset of published data, the original paper is published open-access in New Phytologist: 
