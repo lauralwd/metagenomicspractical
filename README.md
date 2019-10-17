@@ -3,8 +3,10 @@ Hands-on practical for learning a metagenomics workflow aimed at Masters Student
 The practical discusses a metagenomics workflow from acquiring sequencing data up to annotating binned microbial genomes. Steps up to and including assembly have already been performed for feasibility. This practical includes the following steps (and depends on the following tools):
 * backmapping (bwa+samtools)
 * binning (MetaBAT)
-* quality controll of bins (CheckM)
+* quality control of bins (CheckM)
+* taxonomy of bins (BAT)
 * annotation (Prokka)
+* phylogeny reconstruction (IQTree)
 
 # Learning goals of this practical
 * After this practical, you can name and explain the steps of a simple metagenomics workflow. Starting at acquiring sequencing data, all the way to annotation of individual draft genomes.
