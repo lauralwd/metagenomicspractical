@@ -8,6 +8,15 @@ The practical discusses a metagenomics workflow from acquiring sequencing data u
 * annotation (Prokka)
 * phylogeny reconstruction (IQTree)
 
+I recommend, especially to beginners, to install these tools via conda.
+If you have not installed conda, please refer to the guide for miniconda installation on linux.
+Once conda is installed, make sure you have cloned this git repository to your local linux system and navigate to that specific folder in a terminal.
+Then, you may create an environment with all software required via the following command:
+
+`conda env create --file conda-environment.yml`
+
+You activate the environment by typing `conda avtivate metagenomics_practical`
+
 # Learning goals of this practical
 * After this practical, you can name and explain the steps of a simple metagenomics workflow. Starting at acquiring sequencing data, all the way to annotation of individual draft genomes.
   * You can highlight the differences between ‘regular’ genome sequencing data and assemblies versus metagenomic sequencing data and assemblies.
