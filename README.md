@@ -31,12 +31,12 @@ You activate the environment by typing:
 
 `conda avtivate metagenomics_practical`
 
-Make sure you learn about how conda works, it is definitely worth your time. You may open the interactive jupyter notebook pages by typing:
+Make sure you learn about how conda works, it is definitely worth your time. Make sure you are in the `metagenomicspractical`  folder, then you may open the interactive jupyter notebook pages by typing:
 
-`jupyter-notebook jupyter-notebook m1-jupyter_and_bash_basics.ipynb`
+`jupyter-notebook`
 
-This opens a webbrowser showing you a jupyter notebook, if you need to download the data needed for the practical, make sure you follow the commands in `mprepare_download_and_subset_reads.ipynb`
-
+This opens a webbrowser showing you an overview of the `metagenomicspractical` folder, here you can open any of the jupyter notebooks. 
+If you need to download the data needed for the practical, make sure you follow the commands inn `mprepare_download_and_subset_reads.ipynb`
 
 # Learning goals of this practical
 After this practical, you can name and explain the steps of a simple metagenomics workflow. Starting at acquiring sequencing data, all the way to annotation of individual draft genomes.
