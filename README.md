@@ -31,6 +31,10 @@ You activate the environment by typing:
 
 `conda avtivate metagenomics_practical`
 
+Now you installed most of the software we'll need. I recommend to also install the bash kernel for JuPyter notebooks with this command:
+
+`conda install bash_kernel -c conda-forge`
+
 Make sure you learn about how conda works, it is definitely worth your time. Make sure you are in the `metagenomicspractical`  folder, then you may open the interactive jupyter notebook pages by typing:
 
 `jupyter-notebook`
