@@ -23,7 +23,7 @@ Check like this:
   
 If you need to install some sofware, then lets create a new conda environment Named 'phylogenetics' using the Channel 'bioconda', and installing into this environment mafft and iqtree.
   
-`conda create -n phylogenetics -c bioconda mafft iqtree`
+`conda create -n phylogenetics -c bioconda mafft iqtree fasttree`
 
 ## Collect SCMG
 Now we will collect the single copy marker genes from checkm.
@@ -42,15 +42,33 @@ There is many different marker genes, we will select one that is present in mult
 
 Let's continue with marker `PF01668.13` for it is present in all 6 bins.  
 
- Extract the sequences of marker `PF01668.13` with grep (read the grep manual and use the `-A`option.
- Write the output to the new file `PF01668.13.fasta`.
+Extract the sequences of marker `PF01668.13` with grep (read the grep manual and use the `-A`option.
+Write the output to the new file `PF01668.13.fasta`.
  
 ## Allign and inspect
-  
+Now we will allign the protein sequences we have just acquired! 
+Use MAFFT (command `mafft -h`) on automatic settings, write your alignment to `PF01668.13.mafft.fasta`
+
+Alignments can differ in quality. Go to [Jalview online](http://www.jalview.org/jalview-js/JalviewJS.shtml) to visualise your alignment.
+If an alignment has many gaps, you may need to edit it. 
+You will learn more about alignments later in the Introduction to bioinformatics course! 
+For now, we will just continue with this result.
+
 ## Create a tree
-  
+Here, we are working with a small alignment, so both Fasttree and IQ-TREE will be very fast. If you have very big alignments (either long sequences or many sequences) you may want to try Fasttree before you invest a long calculation time in IQ-TREE.
+
 ### Fasttree
-  
+Use the `fasttree` command on default settings to create a tree, this should be near instantaneous. 
+
 ### IQ-TREE
-  
+Now use `iqtree` to make another tree
+
+use automatic model selection (no extra options needed
+
+use iqtree 'ultra fast bootstrapping' with  a 1000 bootstraps.
+
+Note that IQ-TREE generates a lot of output files, you may want to create a new directory, move in there and then run IQ-TREE like this: `iqtree -s ../PF01668.13.mafft.fasta -....` 
+
 ## Inspect tree
+Find both tree files, and upload them to [iTOL](https://itol.embl.de). 
+Create an account if you haven't yet, you will need it later in the Introduction to bioinformatics course.
