@@ -26,8 +26,25 @@ If you need to install some sofware, then lets create a new conda environment Na
 `conda create -n phylogenetics -c bioconda mafft iqtree`
 
 ## Collect SCMG
+Now we will collect the single copy marker genes from checkm.
 
+Adapt the paths according to your situation
 
+`checkm qa data/checkm_outputfolder/Bacteria.ms data/checkm_outputfolder -o 9 -f data/marker_genes.fa`
+
+This file contains many marker genes. Lets have a look at the headers of this fasta. It should look like this
+
+`>bin.1 NODE_107_length_52641_cov_303.322_ID_32256592 geneId=45;start=49177;end=49635;strand=-1;protlen=153 marker=PF02367.12;mstart=12;mend=135`
+
+There is many different marker genes, we will select one that is present in multiple bins with the following line of bash code. Disect it to see what each part does
+
+`egrep 'marker=[A-Z0-9.]+' data/marker_genes.fa -o | cut -f 2 -d '=' | sort | uniq -c`
+
+Let's continue with marker `PF01668.13` for it is present in all 6 bins.  
+
+ Extract the sequences of marker `PF01668.13` with grep (read the grep manual and use the `-A`option.
+ Write the output to the new file `PF01668.13.fasta`.
+ 
 ## Allign and inspect
   
 ## Create a tree
