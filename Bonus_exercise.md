@@ -72,3 +72,8 @@ Note that IQ-TREE generates a lot of output files, you may want to create a new 
 ## Inspect tree
 Find both tree files, and upload them to [iTOL](https://itol.embl.de). 
 Create an account if you haven't yet, you will need it later in the Introduction to bioinformatics course.
+
+Visualise the trees. Have you determined the taxonomy of the Bins with CAT/BAT before? Than you can update the names in the tree. 
+
+Are the trees similar, or dissimilar. If they are not, what could you do to be more sure of the phylogeny of these bins?
+
