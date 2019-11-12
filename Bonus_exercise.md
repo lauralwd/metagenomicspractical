@@ -12,16 +12,28 @@ Congratualations! You completed the practial and are brave enough to try a bonus
 4. Inspect the tree
   * online via iTOL
   
-  The entire exercise takes place in a terminal, not in a jupy notebook. So keep this instruction, and open up a terminal!
+The entire exercise takes place in a terminal, not in a jupy notebook. So keep this instruction, and open up a terminal!
+## Install software
+If IQ-TREE and MAFFT need to be installed, install them via conda. I'm assuming you already have CheckM running since it was part of the practical.
   
-  ## Collect SCMG
+Check like this:
+`iqtree`
+ 
+`mafft -h`
   
-  ## Allign and inspect
+If you need to install some sofware, then lets create a new conda environment Named 'phylogenetics' using the Channel 'bioconda', and installing into this environment mafft and iqtree.
   
-  ## Create a tree
+`conda create -n phylogenetics -c bioconda mafft iqtree`
+
+## Collect SCMG
+
+
+## Allign and inspect
   
-  ### Fasttree
+## Create a tree
   
-  ### IQ-TREE
+### Fasttree
   
-  ## Inspect tree
+### IQ-TREE
+  
+## Inspect tree
