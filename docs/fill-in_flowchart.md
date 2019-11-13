@@ -36,5 +36,5 @@ The flowchart does not have to be correct, it only has to reflect your planning 
 I approve that these flowcharts may be used as an anonymous data for scientific publication by Laura W Dijkhuizen MSc. Signature:............................
 \pagebreak
 
-## Side 2: Draw here a flowchart while you progress in the practical.
-'Grow' this flowchart during the practical, add steps while you do them and make it as complete as possible.
+## Side 2: Draw here a flowchart after you finished the practical.
+Construct this flowchart after you finished the practical; make it as complete as possible. How does it compare to the first flowchart you made?
