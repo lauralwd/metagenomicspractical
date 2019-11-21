@@ -29,7 +29,7 @@ Then, you may create an environment with all software required via the following
 
 You activate the environment by typing:
 
-`conda avtivate metagenomics_practical`
+`conda activate metagenomics_practical`
 
 Now you installed most of the software we'll need. I recommend to also install the bash kernel for JuPyter notebooks with this command:
 
@@ -40,7 +40,7 @@ Make sure you learn about how conda works, it is definitely worth your time. Mak
 `jupyter-notebook`
 
 This opens a webbrowser showing you an overview of the `metagenomicspractical` folder, here you can open any of the jupyter notebooks. 
-If you need to download the data needed for the practical, make sure you follow the commands inn `mprepare_download_and_subset_reads.ipynb`
+If you need to download the data needed for the practical, make sure you follow the commands inn `m00-prepare_download_and_subset_reads.ipynb`
 
 # Learning goals of this practical
 After this practical, you can name and explain the steps of a simple metagenomics workflow. Starting at acquiring sequencing data, all the way to annotation of individual draft genomes.
