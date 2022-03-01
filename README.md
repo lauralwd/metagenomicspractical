@@ -51,7 +51,7 @@ If you need to download the required data for the practical, make sure you follo
 After this practical, you can name and explain the steps of a simple metagenomics workflow. 
 Starting at acquiring sequencing data, all the way to annotating individual draft genomes.
 * You can highlight the differences between 'regular' genome sequencing data and assemblies versus metagenomic sequencing data and assemblies (lecture).
-* You can explain parts of the workflow from biological and technical perspectives when either one or both are appropriate.
+* You can explain parts of the workflow and their interdependencies from biological and technical perspectives.
 * You can replicate the workflow taken during the practical on new data sets.
 * You can design similar workflows for different metagenomic questions.
 * You can explain what binning signals are (lecture), why they are used and how you used them during the practical.
