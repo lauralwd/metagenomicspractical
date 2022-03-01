@@ -59,7 +59,9 @@ If not already, you will understand the basics of the bash computer language and
 
 # Credits and references
 Original practical (version 2017) was made By Margo Schuller and Laura Dijkhuizen. 
-The current version was improved thereupon by [Laura Dijkhuizen](https://www.uu.nl/medewerkers/LWDijkhuizen). 
+The current version was improved thereupon by [Laura Dijkhuizen](https://www.lauradijkhuizen.com). 
 The practical is based on a subset of published data. 
 The original paper is published open-access in New Phytologist: 
->Dijkhuizen, L. W., Brouwer, P., Bolhuis, H., Reichart, G. J., Koppers, N., Huettel, B., ... & Wong, G. K. S. (2018). Is there foul play in the leaf pocket? The metagenome of floating fern Azolla reveals endophytes that do not fix N2 but may denitrify. New Phytologist, 217(1), 453-466.
+>Dijkhuizen, L. W., Brouwer, P., Bolhuis, H., Reichart, G. J., Koppers, N., Huettel, B., ... & Wong, G. K. S. (2018). Is there foul play in the leaf pocket? The metagenome of floating fern Azolla reveals endophytes that do not fix N2 but may denitrify. New Phytologist, 217(1), 453-466. [https://doi.org/10.1111/nph.14843](https://doi.org/10.1111/nph.14843)
+
+The continuation of this project is documented also on github, find more details here: [github.com/lauralwd/azolla_genus_metagenome](https://github.com/lauralwd/azolla_genus_metagenome)
