@@ -17,6 +17,9 @@ This practical includes the following steps (and depends on the following tools)
 If you do this practical without any supervision, you will likely need to install the software required and download the data.
 I recommend, especially to beginners, to install these tools via conda.
 If you have not installed conda, please refer to [the guide for miniconda installation on linux](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html).
+For windows users can install conda too on the windows sublayer for linux.
+I made a [youtube video](https://youtu.be/ZWQMADZjMGc) on how to do that for interns in our lab, it may help you to get conda running as well.
+I encourage you to learn more about how conda works; it is definitely worth your time. 
 Once conda is installed, make sure you have cloned this git repository to your local Linux system.
 Next, navigate to that specific folder in a terminal.
 
