@@ -11,6 +11,8 @@ FastQC reports for the paired end reads of one sample are available here online.
 * [Forward reads](fastqc_reports/L1.R1.fastqcreport.html)
 * [Reverse reads](fastqc_reports/L1.R2.fastqcreport.html)
 
+An example depth matrix is available [here](data/depth_matrix.tab)
+
 ## blank example of the practical
 Find the GitHub page for the practical [here](https://github.com/lauralwd/metagenomicspractical). 
 Blank static examples of the practical pages are available through the links below: 
