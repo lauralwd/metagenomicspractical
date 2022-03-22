@@ -49,6 +49,25 @@ This opens a web browser showing you an overview of the `metagenomicspractical` 
 Here you can open any of the Jupyter notebooks. 
 If you need to download the required data for the practical, make sure you follow the commands in `m00-prepare_download_and_subset_reads.ipynb`
 
+In some cases, your software installed in conda is not available in the jupyter notebook environment.
+A possible fix is the following.
+First, identify in a terminal the path where your conda environment is installed.
+This is likely in your home directory: `/home/your-name/miniconda2/envs/metagenomics_practical/bin`
+To double check, activate your conda environment and find out where any of the software tools we use are situated, for metabat2 this looks like so: `which metabat2`.
+Next, we take that path, and add it the the `$PATH` system variable. 
+Make sure to adapt the next command to your situation: 
+
+```
+export PATH=/home/laura/miniconda3/envs/metagenomics_practical/bin:$PATH
+```
+
+Next, re-install the bash kernel with this command:
+```
+python3 -m bash_kernel.install
+```
+
+Now run `jupyter notebook` again and check if the software is available to you.
+
 # Help along the way
 When teaching this course during the corona pandemic, I decided to record walkthroughs of the entire practical and post these on youtube.
 You can find all video's used for this particular practical in a [youtube playlist](https://www.youtube.com/playlist?list=PLWmKspMOX1oHOzXmJ1wI2eZinzfGqmu90).
