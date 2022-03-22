@@ -27,16 +27,14 @@ cd metagenomicspractical
 
 Then, you may create an environment with all software required via the following command:
 
-`conda env create --file conda-environment.yml`
+`conda env create`
 
+The previous command reads the `environment.yml` file to create the exact combination of software I use.
 You activate the environment by typing:
 
 `conda activate metagenomics_practical`
 
-Now you installed most of the software we'll need. 
-I recommend installing the bash kernel for JuPyter notebooks with this command:
-
-`conda install bash_kernel -c conda-forge`
+Now you installed all of the software we'll need!
 
 Make sure you learn about how conda works; it is definitely worth your time. 
 Make sure you are in the `metagenomicspractical`  folder, and then you may open the interactive Jupyter notebook pages by typing:
