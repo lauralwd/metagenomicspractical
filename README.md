@@ -30,19 +30,18 @@ git clone https://github.com/lauralwd/metagenomicspractical.git
 cd metagenomicspractical
 ```
 
-Then, you may create an environment with all software required via the following command:
+Next, you can create an environment with all software required via the following command:
 
 `conda env create`
 
-The previous command reads the `environment.yml` file to create the exact combination of software I use.
+The previous command reads the `environment.yml` file to install the exact combination of software I use when teaching this practical.
 You activate the environment by typing:
 
 `conda activate metagenomics_practical`
 
-Now you installed all of the software we'll need!
+Now you installed all of the software you need and made it ready for use!
 
-Make sure you learn about how conda works; it is definitely worth your time. 
-Make sure you are in the `metagenomicspractical`  folder, and then you may open the interactive Jupyter notebook pages by typing:
+Make sure you are in the `metagenomicspractical` folder, and then you may open the interactive Jupyter notebook pages by typing:
 
 `jupyter-notebook`
 
