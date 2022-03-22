@@ -22,6 +22,8 @@ I made a [youtube video](https://youtu.be/ZWQMADZjMGc) on how to do that for int
 I encourage you to learn more about how conda works; it is definitely worth your time. 
 Once conda is installed, make sure you have cloned this git repository to your local Linux system.
 Next, navigate to that specific folder in a terminal.
+If you do not have git installed, you can do so via your system package manager (i.e. `apt install git`) or via conda (`conda install git`). 
+Alternativelly, download the whole practical as a zip file by clicking the green 'code' button on GitHub.
 
 ```
 git clone https://github.com/lauralwd/metagenomicspractical.git
