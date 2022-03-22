@@ -49,6 +49,11 @@ This opens a web browser showing you an overview of the `metagenomicspractical` 
 Here you can open any of the Jupyter notebooks. 
 If you need to download the required data for the practical, make sure you follow the commands in `m00-prepare_download_and_subset_reads.ipynb`
 
+# Help along the way
+When teaching this course during the corona pandemic, I decided to record walkthroughs of the entire practical and post these on youtube.
+You can find all video's used for this particular practical in a [youtube playlist](https://www.youtube.com/playlist?list=PLWmKspMOX1oHOzXmJ1wI2eZinzfGqmu90).
+The quality of these video's is not great and the content isn't always as brief as it could be, but I hope this helps you along in case you get stuck.
+
 # Learning goals of this practical
 After this practical, you can name and explain the steps of a simple metagenomics workflow. 
 Starting at acquiring sequencing data, all the way to annotating individual draft genomes.
