@@ -6,6 +6,11 @@ Click [here](/) to go back to my home page.
 Read more about the practical on the [about page](/metagenomicspractical/about/).
 This includes a basic description, instalation details, and learning goals.
 
+## Materials
+FastQC reports for the paired end reads of one sample are available here online.
+* [Forward reads](fastqc_reports/L1.R1.fastqcreport.html)
+* [Reverse reads](fastqc_reports/L1.R2.fastqcreport.html)
+
 ## blank example of the practical
 Find the GitHub page for the practical [here](https://github.com/lauralwd/metagenomicspractical). 
 Blank static examples of the practical pages are available through the links below: 
