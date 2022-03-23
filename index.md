@@ -7,6 +7,7 @@ Read more about the practical on the [about page](/metagenomicspractical/about/)
 This includes a basic description, instalation details, and learning goals.
 
 ## blank example of the practical
+Find the GitHub page for the practical [here](https://github.com/lauralwd/metagenomicspractical). 
 Blank static examples of the practical pages are available through the links below: 
 * [m00 prepare, download and subset reads](practical_pages/m00-prepare_download_and_subset_reads.html)
 * [m01 introduction text](practical_pages/m01-introduction.html)
@@ -23,6 +24,8 @@ Blank static examples of the practical pages are available through the links bel
 
 
 ## example code / answers
+A branch of the original GitHub repository contains the practical with worked out examples and some intermediate files.
+Find [this branch here](https://github.com/lauralwd/metagenomicspractical/tree/example) or browse through them as static html pages.
 Static pages with pre-filled code can be found through the links below:
 * [m00 prepare, download and subset reads](practical_example/m00-prepare_download_and_subset_reads.html)
 * [m01 introduction text](practical_example/m01-introduction.html)
