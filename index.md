@@ -13,6 +13,8 @@ FastQC reports for the paired end reads of one sample are available here online.
 
 An example depth matrix is available [here](data/depth_matrix.tab)
 
+The visualisation (excel) exercises in the notebooks are shared [here via google spreadsheats](https://docs.google.com/spreadsheets/d/1Cdkl8dT75CETGUA_l52Gh8g8qtWd9vv4QAGtTe9HpPU/edit#gid=1292451652).
+
 ## blank example of the practical
 Find the GitHub page for the practical [here](https://github.com/lauralwd/metagenomicspractical). 
 Blank static examples of the practical pages are available through the links below: 
