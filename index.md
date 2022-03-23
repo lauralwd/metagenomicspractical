@@ -15,9 +15,15 @@ An example depth matrix is available [here](data/depth_matrix.tab)
 
 The visualisation (excel) exercises in the notebooks are shared [here via google spreadsheats](https://docs.google.com/spreadsheets/d/1Cdkl8dT75CETGUA_l52Gh8g8qtWd9vv4QAGtTe9HpPU/edit#gid=1292451652).
 
-CheckM examples comming up in a bit...
+CheckM outputs are stored in the example branch of the practial.
+One file is available for the taxonomy workflow, set to 'Bacteria' [here](https://github.com/lauralwd/metagenomicspractical/blob/example/data/checkm_taxonomy/checkm_taxonomy_summary.txt)
+Another file is available for the lineage workflow.
+This is the more advanced workflow that tries to determine the lineage of a microbial genome before looking for single copy marker genes.
+Find the output of checkm [here](https://github.com/lauralwd/metagenomicspractical/blob/example/data/checkm_lineage/checkm_lineage_summary.txt)
 
-Prokka mapping tables for visualisation in KEGG are stored in the main branch of the GitHub repo [here](github.com/lauralwd/metagenomicspractical/tree/master/data/blastKOala)
+Prokka mapping tables for visualisation in KEGG are stored in the main branch of the GitHub repo [here](github.com/lauralwd/metagenomicspractical/tree/master/data/blastKOala).
+These files should be available in the GitHub repo you cloned yourself.
+You can make these yourself with the prokka protein files and blastKOala online as well.
 
 ## blank example of the practical
 Find the GitHub page for the practical [here](https://github.com/lauralwd/metagenomicspractical). 
