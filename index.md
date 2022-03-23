@@ -15,6 +15,10 @@ An example depth matrix is available [here](data/depth_matrix.tab)
 
 The visualisation (excel) exercises in the notebooks are shared [here via google spreadsheats](https://docs.google.com/spreadsheets/d/1Cdkl8dT75CETGUA_l52Gh8g8qtWd9vv4QAGtTe9HpPU/edit#gid=1292451652).
 
+CheckM examples comming up in a bit...
+
+Prokka mapping tables for visualisation in KEGG are stored in the main branch of the GitHub repo [here](github.com/lauralwd/metagenomicspractical/tree/master/data/blastKOala)
+
 ## blank example of the practical
 Find the GitHub page for the practical [here](https://github.com/lauralwd/metagenomicspractical). 
 Blank static examples of the practical pages are available through the links below: 
