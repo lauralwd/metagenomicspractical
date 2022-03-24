@@ -13,6 +13,9 @@ This practical includes the following steps (and depends on the following tools)
 * annotation (Prokka)
 * phylogeny reconstruction (IQTree)
 
+Answers/prefilled code is available in a separate branch of this github repository called 'example'. 
+Renders of the empty and pre-filled workflow are available as a github pages website in the 'gh-pages' branch and online [here](https://lauralwd.github.io/metagenomicspractical/).
+
 ## Installation
 If you do this practical without any supervision, you will likely need to install the software required and download the data.
 I recommend, especially to beginners, to install these tools via conda.
