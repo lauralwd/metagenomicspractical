@@ -20,7 +20,7 @@ Another file is available for the lineage workflow.
 This is the more advanced workflow that tries to determine the lineage of a microbial genome before looking for single copy marker genes.
 Find the output of checkm [here](https://github.com/lauralwd/metagenomicspractical/blob/example/data/checkm_lineage/checkm_lineage_summary.txt)
 
-Prokka mapping tables for visualisation in KEGG are stored in the main branch of the GitHub repo [here](github.com/lauralwd/metagenomicspractical/tree/master/data/blastKOala).
+Prokka mapping tables for visualisation in KEGG are stored in the main branch of the GitHub repo [here](github.com/lauralwd/metagenomicspractical/tree/main/data/blastKOala).
 These files should be available in the GitHub repo you cloned yourself.
 You can make these yourself with the prokka protein files and blastKOala online as well.
 
