@@ -49,12 +49,14 @@ This opens a web browser showing you an overview of the `metagenomicspractical` 
 Here you can open any of the Jupyter notebooks. 
 If you need to download the required data for the practical, make sure you follow the commands in `m00-prepare_download_and_subset_reads.ipynb`
 
-In some cases, your software installed in conda is not available in the jupyter notebook environment.
+In some cases, your software installed in conda is not available in the JuPyter notebook environment.
+As far as I'm concerned, this is abug of the bash_kernel installed in the JuPyter environment; the python3 kernel does find the executables from the conda environment.
 A possible fix is the following.
 First, identify in a terminal the path where your conda environment is installed.
 This is likely in your home directory: `/home/your-name/miniconda2/envs/metagenomics_practical/bin`
-To double check, activate your conda environment and find out where any of the software tools we use are situated, for metabat2 this looks like so: `which metabat2`.
-Next, we take that path, and add it the the `$PATH` system variable. 
+To double check, activate your conda environment like above and find out where any of the software tools we use are situated.
+Doing this for metabat2 this looks like so: `which metabat2`.
+Next, we take that path to the `bin`  directory, and add it the the `$PATH` system variable. 
 Make sure to adapt the next command to your situation: 
 
 ```
@@ -67,6 +69,7 @@ python3 -m bash_kernel.install
 ```
 
 Now run `jupyter notebook` again and check if the software is available to you.
+If the problem returns after you closed your terminal, run the former of these two commands again and start JuPyter after.
 
 # Help along the way
 When teaching this course during the corona pandemic, I decided to record walkthroughs of the entire practical and post these on youtube.
