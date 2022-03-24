@@ -13089,16 +13089,16 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><h2>Length distributions of the scaffolds</h2>
-Now that we have the assembly, we will do some quick analyses to get an idea of the quality. 
+<h2 id="Length-distributions-of-the-scaffolds">Length distributions of the scaffolds<a class="anchor-link" href="#Length-distributions-of-the-scaffolds">&#182;</a></h2><p>Now that we have the assembly, we will do some quick analyses to get an idea of the quality. 
 This is a <strong>python notebook again</strong>. 
 First, we will plot the length distribution of the scaffolds in the assembly. 
 Luckily for us, the length of each sequence in the fasta is already embedded in each fasta header. 
-We can easily extract these numbers and plot them in python.</p>
+We can easily extract these numbers and plot them in python.
+Second, we'll plot the length versus the depth (or vertical coverage) of the scaffolds.</p>
 <p>Since this is a bash practical, I wrote the python code for you already. All you need to do is add the path to your assembly file in the line</p>
 <blockquote><p>f = open("path/to/assembly.file","r")</p>
 </blockquote>
-<p>To plot the length distribution, run the python code below.</p>
+<p><strong>[DO:] Plot the scaffold length distribution by running the python code below.</strong></p>
 
 </div>
 </div>
@@ -13141,8 +13141,7 @@ We can easily extract these numbers and plot them in python.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Did you expect this distribution?</p>
-<p>Why would there be so many short scaffolds?</p>
+<p><strong>[Q:] Did you expect this distribution?</strong></p>
 
 </div>
 </div>
@@ -13150,7 +13149,31 @@ We can easily extract these numbers and plot them in python.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now make the following plot, what do the axis mean, and what do you think you see in the figure?</p>
+<p><strong>[A:]</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[Q:] Why would there be so many short scaffolds?</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[A:]</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[DO:]Now make the following plot.</strong> (No coding needed)</p>
 
 </div>
 </div>
@@ -13182,9 +13205,73 @@ We can easily extract these numbers and plot them in python.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[Q:] what do the axis mean?</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[A:]</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[DO:] Identify three horizontal clusters in the plot above</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[Q:] what do you think the horizontal clusters of dots represent in this figure?</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[A:]</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="example">example<a class="anchor-link" href="#example">&#182;</a></h3><p>For my PhD project on the Azolla metagenome, I made a "metagenome taxnomy browser" based on the simple principle you just used.
 In addition to plotting contig depth vs contig length, I added taxonomy information and some filtering options. 
 The final interactive graph is available <a href="https://utrecht-university.shinyapps.io/Azolla_genus-wide_metagenome_taxonomy/">online to play with</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[DO:] Find the Azolla wild sample in the interactive plot</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[Q:] How many species are present in each of these horizontal clusters you identified in your own python figure?</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[A:]</strong></p>
 
 </div>
 </div>

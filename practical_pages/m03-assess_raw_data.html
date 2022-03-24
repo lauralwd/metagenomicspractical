@@ -13108,8 +13108,8 @@ So 2 samples <em> 3 replicates </em> 2 directions = 12 files
 Files are stored in a fastq format (.fastq) which are compressed in gzip archives (.gz). 
 The gzip compression format is widely used in the genomics field. 
 Fastq files often compress down to only a quarter of the filesize with gzip! 
-You do not need to extract these.</p>
-<p>Lets first double check if all files are available.</p>
+These days, you rarely ever need to extract these; all modern software can read these compressed fastq files.</p>
+<p><strong>[DO] Lets first double check if all files are available.</strong></p>
 <ul>
 <li>use the <code>ls</code> command to see what files are present in the <code>data/reads/</code> folder</li>
 <li>issue this command in the cell below:</li>
@@ -13143,17 +13143,12 @@ So big even that you may crash this webpage.
 To prevent this from happening, 'pipe' the output of <code>zcat</code> to <code>head</code> to display only the first ten lines like so:</p>
 <blockquote><p>zcat path/to/file.gz | head</p>
 </blockquote>
-<p>Now, in the cell below, check the first ten lines of one of the fastq files. By doing:</p>
+<p><strong>[DO] Now, in the cell below, check the first ten lines of one of the fastq files like so:</strong></p>
 <ul>
 <li>use the <code>zcat</code> command</li>
 <li>type yourself the path to one of the <code>fastq.gz</code> files we have seen in <code>ls</code> before</li>
 <li>use a 'pipe' and the <strong>head</strong> command to only display the first ten lines of the output.</li>
 </ul>
-<p>Do these look as we would expect?</p>
-<p>Note that the regular <code>cat</code> command prints regular files to your screen. 
-The <code>zcat</code> command is just a variant of this for compressed files.</p>
-<blockquote><p>cat is short for conCATenate,  zcat is short for something like gZipped-conCATenate</p>
-</blockquote>
 
 </div>
 </div>
@@ -13175,10 +13170,30 @@ The <code>zcat</code> command is just a variant of this for compressed files.</p
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There is no need to be alarmed by the 'broken pipe' error message. Still, do you understand what the error means?</p>
+<p><strong>[Q] Do these look as we would expect?</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[A]</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that the regular <code>cat</code> command prints regular files to your screen. 
+The <code>zcat</code> command is just a variant of this for compressed files.</p>
+<blockquote><p>cat is short for conCATenate,  zcat is short for something like gZipped-conCATenate</p>
+</blockquote>
 <h3 id="Counting-reads">Counting reads<a class="anchor-link" href="#Counting-reads">&#182;</a></h3><p>Now, I want you to find out how many reads there are in a single fastq file. You will achieve this in two steps.</p>
 <p>First, using grep, we can select for lines in a file that contain only the word/key specified in the grep command.
 As you can see in the above command, the headers of the reads always start with the "@", therefor if we only want to see the headers, we can grep for the "@" using the command below:</p>
-<p>In the cell below, create a command that uses</p>
+<p><strong>[DO:] In the cell below, create a command that uses</strong></p>
 <ol>
 <li><code>zcat</code>  to open the fastq.gz file.</li>
 <li><code>grep '@'</code>   to print only lines with an '@'. So only the headers of the FastQ file.</li>
@@ -13207,8 +13222,8 @@ As you can see in the above command, the headers of the reads always start with 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the output you just created in step one, every line contains a header representing one sequence. 
 The second step now is to count these lines. 
-To count the number of lines, we will first have to read in the gzip file, then grep on the headers, and then we can use the word count command to count the number of lines. 
-First read the 'help page' of the <code>wc</code> command by typing in the cell below:</p>
+To count the number of lines, we will first have to read in the gzip file, then grep on the headers, and then we can use the word count command to count the number of lines.</p>
+<p><strong>[DO:] First read the 'help page' of the <code>wc</code> command by typing in the cell below:</strong></p>
 <blockquote><p>wc --help</p>
 </blockquote>
 
@@ -13232,7 +13247,7 @@ First read the 'help page' of the <code>wc</code> command by typing in the cell 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What option do we need to provide <code>wc</code> to count lines? Deduce from the manual page.</p>
-<p>Now Finally, make a new 'pipeline' using</p>
+<p><strong>[DO:] Now Finally, make a new 'pipeline' using</strong></p>
 <ol>
 <li><code>zcat</code>  to open the fastq.gz file</li>
 <li><code>grep '@'</code>   to filter out only headers </li>
@@ -13258,8 +13273,7 @@ First read the 'help page' of the <code>wc</code> command by typing in the cell 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="wrap-up">wrap up<a class="anchor-link" href="#wrap-up">&#182;</a></h3><p>So now you have executed some bash commands and investigated the output. 
-Well done!</p>
+<p><strong>[Q:] How many sequences are in the FastQ file, is this number remarkable?</strong></p>
 
 </div>
 </div>
@@ -13267,10 +13281,19 @@ Well done!</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[A]</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So now you have executed some bash commands and investigated the output. 
+Well done!</p>
 <h2 id="Assembled-data">Assembled data<a class="anchor-link" href="#Assembled-data">&#182;</a></h2><p>Calculating a de-novo metagenome assembly is beyond the scope of this practical, so we have done this for you. 
 You will however, analyse this assembly yourself! :)</p>
-<p>Let's start by looking at the assembly files in the folder <code>data/assembly</code>. 
-Do this in the cell below.</p>
+<p><strong>[DO:] Let's start by looking at the assembly files in the folder</strong> <code>data/assembly</code><strong>.</strong></p>
 
 </div>
 </div>
@@ -13297,6 +13320,7 @@ Only if the assembly is a compressed <code>scaffolds.fasta.gz</code> file.
 If you are dealing with a 'regular' fasta file, use <code>cat</code>.</p>
 <p>Finally, after using head, also type <code>| cut -c 1-500</code> This <em>cut</em>s out <em>c</em>haracter <em>1 to 500</em>.
 If you skip that last step, you may overload this web page.</p>
+<p><strong>[DO:] Use</strong> <code>(z)cat</code><strong>,</strong> <code>head</code><strong>, and</strong> <code>cut -c 1-500</code> <strong>to look at the first lines of the assembly'</strong></p>
 
 </div>
 </div>
@@ -13321,11 +13345,11 @@ If you skip that last step, you may overload this web page.</p>
 Remember how we did this for the FastQ file?</p>
 <p>Also, remember that the headers for FastQ files and Fasta files are not the same.</p>
 <ol>
-<li><code>cat</code> the assembly file</li>
+<li><code>(z)cat</code> the assembly file</li>
 <li><code>grep</code> the headers</li>
 <li><code>wc</code> to count the lines.</li>
 </ol>
-<p>Add a new cell below and assess the number of scaffolds in the metagenome assembly.</p>
+<p><strong>[DO:] Assess the number of scaffolds in the metagenome assembly.</strong></p>
 
 </div>
 </div>
@@ -13346,6 +13370,22 @@ Remember how we did this for the FastQ file?</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[Q:] Do you remember from the lecture any reasons that assemblies may be split up over this amount of contigs?</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[A]</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="prepare-assembly-data">prepare assembly data<a class="anchor-link" href="#prepare-assembly-data">&#182;</a></h2><p>For convenience, we will decompress the assembly. 
 Compression was achieved with the <code>gzip</code> programme. 
 Decompression can be done with the command <code>gunzip path/to/assembly</code>.</p>
@@ -13359,7 +13399,7 @@ Decompression can be done with the command <code>gunzip path/to/assembly</code>.
 <li>In the second cell, use <code>ls</code> command to see if it worked the file is still a <code>.gz</code> file, or if it was decompressed.</li>
 <li>Finally, in the third cell, use the <code>head command</code> to peak into the assembly like so <code>head ./data/assembly/scaffolds.fasta | cut -c 1-500</code></li>
 </ol>
-<p>You will need the uncompressed assembly for the next step.</p>
+<p><strong>[DO:] decompress the assembly and check if you were successfull as indicated above</strong></p>
 
 </div>
 </div>

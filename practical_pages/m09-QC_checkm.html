@@ -13089,16 +13089,22 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Checking-completeness-and-contamination-using-CheckM">Checking completeness and contamination using CheckM<a class="anchor-link" href="#Checking-completeness-and-contamination-using-CheckM">&#182;</a></h2><p>Now that we have the bins made with metabat we can check them for contamination and completeness (quality); for this, we will use CheckM. CheckM provides a set of tools for assessing the quality of genomes recovered from isolates, single cells, or metagenomes. It provides robust estimates of genome completeness and contamination by using collocated sets of genes that are ubiquitous and single-copy within a phylogenetic lineage (also called marker/signature genes). <a href="http://ecogenomics.github.io/CheckM/">http://ecogenomics.github.io/CheckM/</a></p>
-<p>As you will be able to see in the checkm help pages, checkm has a workflow (lineage_wf) that will run all necessary steps to assess bin quality.</p>
-<p>Lineage_wf (lineage-specific workflow) steps: <br></p>
+<h2 id="Checking-completeness-and-contamination-using-CheckM">Checking completeness and contamination using CheckM<a class="anchor-link" href="#Checking-completeness-and-contamination-using-CheckM">&#182;</a></h2><p>Now that we have bins made with <code>metabat2</code> we can check them for contamination and completeness (quality); for this, we will use CheckM.
+<a href="http://ecogenomics.github.io/CheckM/">CheckM</a> is a suite of tools for assessing the quality of bacterial genomes assemblies/bins.
+It estimates genome completeness and contamination by using Single Copy Marker Genes (SCMGs) of a specific phylogenetic lineage.</p>
+<p>As you will be able to see in the checkm help pages, <code>checkm</code> has a workflow (<code>lineage_wf</code>) that will run all necessary steps to assess bin quality.</p>
+<p>Lineage_wf (lineage-specific workflow) steps:</p>
 <ul>
 <li>The tree command places genome bins into a reference genome tree.</li>
 <li>The lineage_set command creates a marker file indicating lineage-specific marker sets suitable for evaluating each individual bin with the most appropriate reference set of markers. </li>
 <li>This marker file is passed to the analyze command to identify marker genes and estimate the completeness and contamination of each genome bin. </li>
-<li>Finally, the qa command can be used to produce different tables summarizing the quality of each genome bin. <br></li>
+<li>Finally, the qa command can be used to produce different tables summarizing the quality of each genome bin.</li>
 </ul>
-<p>Unfortunately, the 'tree' part of this workflow is too memory intensive (about 32Gbytes of RAM (!) ), So we will cheat a bit. <strong> Instead, we will use the <code>checkm taxonomy_wf domain Bacteria</code> command. </strong> Hence, we don't load the full tree to find the most appropriate marker set, but assume all are bacteria (reasonable assumption in this case) and don't look any deeper than that.</p>
+<p>Unfortunately, the 'tree' part of this workflow is too memory intensive (<strong>about 32Gbytes of RAM (!)</strong> ).
+So we will cheat a bit.
+Instead of the <code>lineage_wf</code>, we will use the <code>taxonomy_wf</code>.
+The <code>taxonomy_wf</code> does not determine the lineage of a bin, but checks SCMGs for a lineage that you provide in the commandline.
+Hence, we don't load the full tree to find the most appropriate marker set, but assume all bins are bacteria (reasonable assumption in this case) and don't look any deeper than that.</p>
 
 </div>
 </div>
@@ -13119,7 +13125,32 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The checkm manual may seem somewhat intimidating. However, remember that the options in square brackets are optional <code>[optional argument]</code>. Those without brackets are mandatory.</p>
+<p>The checkm manual may seem somewhat intimidating. 
+However, remember that the options in square brackets are optional <code>[optional argument]</code>. 
+Those without brackets are mandatory.</p>
+<p><strong>[DO:] Run the</strong> <code>checkm taxonomy_wf</code> <strong>on the bins you created:</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>checkm taxonomy_wf
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If <code>CheckM</code> doesn't work propperly, you can see an example output <a href="https://github.com/lauralwd/metagenomicspractical/blob/example/data/checkm_taxonomy/checkm_taxonomy_summary.txt">here</a></p>
+<p><strong>[Q:] What can you say about the binning quality</strong></p>
 
 </div>
 </div>
@@ -13127,12 +13158,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>(think and discuss these questions) <br></p>
-<p>What did you do? <br>
-Where is your output? <br>
-What does your output look like? <br>
-What can you say about the bins with this output? <br>
-What can you say about lineages of the bins?<br></p>
+<p><strong>[A:]</strong></p>
 
 </div>
 </div>
@@ -13140,13 +13166,30 @@ What can you say about lineages of the bins?<br></p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can create an extended checkm table with more information.</p>
+<p>A CheckM output of the full <code>lineage_wf</code> is available <a href="https://github.com/lauralwd/metagenomicspractical/blob/example/data/checkm_lineage/checkm_lineage_summary.txt">online here</a></p>
+<p><strong>[Q:]</strong> Is the taxonomy of the bins a surprise given the nature of the sample?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[A:]</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Bonus">Bonus<a class="anchor-link" href="#Bonus">&#182;</a></h2><p>You can create an extended checkm table with more information.</p>
 <ol>
 <li>Read the Checkm manual, and find out how to do this.</li>
 <li>Save the table in 'tab-delimited format, so you can download it and open it in Excel/google-sheets/libroffie.</li>
 <li>Choose what information you find valuable and discard the rest.</li>
 <li>Add the mean depth +/- SEM (Standard Error Mean) of each bin, per sample type.<ul>
-<li>Sample types are E (Leaf) and P (Plant)</li>
+<li>Sample types are L (Leaf) and P (Plant)</li>
 </ul>
 </li>
 <li>Congratulations, you got your first table for a manuscript/thesis about your metagenome analysis!</li>
@@ -13160,7 +13203,7 @@ What can you say about lineages of the bins?<br></p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Bonus">Bonus<a class="anchor-link" href="#Bonus">&#182;</a></h1><p>Did you try to vary binning parameters in the previous notebook (M7)? 
+<h1 id="Bonus-2">Bonus 2<a class="anchor-link" href="#Bonus-2">&#182;</a></h1><p>Did you try to vary binning parameters in the previous notebook? 
 If so, run these through Checkm as well.
 Remember to create clear and separate output directories.</p>
 <p>Are the bins of similar quality?</p>

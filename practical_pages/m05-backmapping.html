@@ -13092,14 +13092,55 @@ div#notebook {
 <h1 id="Mapping-reads-to-scaffolds-with-BWA-(Burrows-Wheeler-Aligner)-and-sorting-with-Samtools">Mapping reads to scaffolds with BWA (Burrows-Wheeler Aligner) and sorting with Samtools<a class="anchor-link" href="#Mapping-reads-to-scaffolds-with-BWA-(Burrows-Wheeler-Aligner)-and-sorting-with-Samtools">&#182;</a></h1><p>We now have seen the reads and the assembly with our own eyes. 
 In any bio-informatic step, learn yourself always to have a peek into the actual data you are producing. 
 Since you now have seen that the files look OK, we can start by mapping (aligning) the original reads in <code>.fastq.gz</code> files back to the scaffolds created with the assembly; the <code>scaffolds.fasta</code> file. 
-Doing this will allow us to calculate the read depth on the scaffolds; a prerequisite for the binning procedure.</p>
-<p>The reads are paired-end Illumina sequences, which means that for each DNA fragment, we have sequence data from both ends. 
+Doing this will allow us to calculate the <strong>depth on the scaffolds</strong>; a prerequisite for the binning procedure.</p>
+<p>Algning is achieved with bwa.
+Per sample, we map the reads against the scaffolds and save the mapping as a <code>.bam</code> file.</p>
+<ol>
+<li>To run <code>bwa</code>, we first need to make an index file of the scaffolds. </li>
+<li>Then we can run <code>bwa</code> and immediately pipe the output of <code>bwa</code> through <code>samtools view</code> which will output a <code>.bam</code> file .</li>
+<li>Finally, since we have quite a few <code>.bam</code> files to align to the assembly, we will make a <code>for</code> loop that will iterate over the different samples we have. </li>
+</ol>
+<p>Rember that the reads are paired-end Illumina sequences, which means that for each DNA fragment, we have sequence data from both ends. 
 Therefore, the sequences are stored in two separate files (one for the data from each end). 
 We'll use <code>bwa</code> with default settings to align the reads back to the scaffolds, and then <code>samtools</code> allows us to work with the bwa results.</p>
-<p>For a second, think about why this called back mapping and not just mapping?</p>
-<p><b>Assignment:</b><br>
-Use bwa to back-map the reads against the scaffolds and save the mapping as a <code>.bam</code> file. 
-When in doubt, don't forget to read the 'help page' of a command like so:</p>
+<p><strong>[Q:] Why this called back-mapping and not just mapping?</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[A:]</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[Q:] Why do we not use the depth in the scaffold names?</strong></p>
+<details>
+    <summary>&#10551; Click here for a hint</summary> 
+    Remember that in the back-mapping step, we map, store and process all samples individually.
+</details>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[A:]</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The next assignment is a complicated one.
+Make sure to read the instructions carefully and remember what you learned about bash loops earlier.</p>
+<p>When in doubt, don't forget to read the 'help page' of a command like so:</p>
 <blockquote><p>ls --help</p>
 </blockquote>
 <p>or sometimes by executing the command without any arguments like so:</p>
@@ -13111,17 +13152,6 @@ Unfortunately, this doesn't work well inside Jupyter notebooks.</p>
 <blockquote><p>man bwa</p>
 <p>man samtools</p>
 </blockquote>
-<p>In this notebook we will do the following.</p>
-<ol>
-<li>To run <code>bwa</code>, we first need to make an index file of the scaffolds. </li>
-<li>Then we can run bwa and immediately pipe the output of bwa through samtools view which will output a bam file </li>
-<li>Finally, since we have quite a few bam files to align to the assembly, we will make a <code>for</code> loop that will iterate over the different samples we have. </li>
-</ol>
-<p>Hence, we're combining a lot of the things we have learnt so far. 
-Make sure you tackle this assignment step by step and help each other where necessary.</p>
-<p>Some background:</p>
-<blockquote><p>By default, mapping algorithms like bwa spit out a .sam file. The sam format is widely used and accepted by many different downstream programmes. Basically, it's just a big table with a standardised format. Although a sam file is human-readable, it is also rather bulky. The file size of a single SAM file will quickly exceed the disk space you have on this virtual machine. Therefore, we convert it to a BAM file, a Binary sAM file. There is no loss of information; it is just saved much more efficiently. Naturally, a binary file is not human readable. Always store your files as bam files. If you need to have a look in the bam file, you can view them using <code>samtools view</code> or any of the many downstream programmes available online.</p>
-</blockquote>
 
 </div>
 </div>
@@ -13129,7 +13159,7 @@ Make sure you tackle this assignment step by step and help each other where nece
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Index-the-assembly-with-bwa-index">Index the assembly with bwa index<a class="anchor-link" href="#Index-the-assembly-with-bwa-index">&#182;</a></h2><p>In the new cells below, create an index of the scaffolds with bwa. 
+<h2 id="1-Index-the-assembly-with-bwa-index">1 Index the assembly with bwa index<a class="anchor-link" href="#1-Index-the-assembly-with-bwa-index">&#182;</a></h2><p><strong>[DO:] Create an index of the scaffolds with</strong> <code>bwa index</code>**
 Start by reading the <code>bwa index</code> instructions.</p>
 <ol>
 <li>Remember to look for the 'usage' line first. </li>
@@ -13137,7 +13167,6 @@ Start by reading the <code>bwa index</code> instructions.</p>
 <li>Remember where the assembly was? We just gUnzipped it in the last notebook. </li>
 <li>use <code>ls</code> and auto completion to find your way to the right file</li>
 </ol>
-<p>Create new cells if you prefer with the '+' sign or by hitting the b-key on your keyboard.</p>
 
 </div>
 </div>
@@ -13158,11 +13187,11 @@ Start by reading the <code>bwa index</code> instructions.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So while this runs, let's think about what is happening. 
+<p>While this runs, think about what is happening. 
 Mapping always takes a query sequence and a reference sequence. 
 The reference is our assembly, specifically the <code>scaffolds.fasta</code> file. 
 What <code>bwa index</code> does, is take this reference and 'index' it. 
-This means as much as it converts this regular text fasta file, into a complicated binary format that computers can efficiently search.</p>
+This means as much as it converts this regular text fasta file, into a binary format that computers can efficiently search.</p>
 
 </div>
 </div>
@@ -13173,6 +13202,7 @@ This means as much as it converts this regular text fasta file, into a complicat
 <h2 id="Check-the-output-of-bwa">Check the output of bwa<a class="anchor-link" href="#Check-the-output-of-bwa">&#182;</a></h2><p>After creating the index, there should be multiple files in the assembly folder. 
 Think about what command you could use to see if that is the case. 
 Use the empty cell below.</p>
+<p><strong>[DO:] Check if the index files were created:</strong></p>
 
 </div>
 </div>
@@ -13206,13 +13236,13 @@ It is not meant for human eyes, but purely for the computer algorithms to search
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Run-bwa-mem-for-backmapping">Run bwa mem for backmapping<a class="anchor-link" href="#Run-bwa-mem-for-backmapping">&#182;</a></h2><p>For this part, we will combine your skills on <strong>bash loops</strong> and <strong>variables</strong> to run bwa mem and samtools view on all the reads in data/reads and create BAM output files in a newly made directory.</p>
 <p>Then we use a bash for loop to run samtools sort on all the files created by samtools view</p>
-<p>Step by step instruction:<br></p>
+<p>Step by step instructions:</p>
 <ol>
 <li>make a new directory for the samtools view results, give this a useful name<ol>
 <li>I suggest ./data/mapped</li>
+<li>to make a directory, use the command <code>mkdir</code></li>
 </ol>
 </li>
-<li>to make a directory, use the command <code>mkdir</code></li>
 <li>See how the loop I pre-made for you works, play a bit to see if you understand correctly</li>
 <li>Don't forget to read the manual page of both! You can make extra cells to print these manual pages if you want to.</li>
 <li>finish the for loop and run both these commands in a pipe<ol>
@@ -13234,7 +13264,7 @@ If you think your loop works (read: it doesn't crash immediately), then check in
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>1 First make your new directory here.</p>
+<p><strong>[DO:] 1 First make your new directory here:</strong></p>
 
 </div>
 </div>
@@ -13255,7 +13285,7 @@ If you think your loop works (read: it doesn't crash immediately), then check in
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>2 now see how this loop works.</p>
+<p><strong>[DO:] 2 now see how this loop works:</strong></p>
 
 </div>
 </div>
@@ -13281,7 +13311,8 @@ If you think your loop works (read: it doesn't crash immediately), then check in
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>3 Read the manual</p>
+<p><strong>[DO:] 3 Read the manual pages of bwa and samtools.</strong> 
+Remember to find the <strong>usage</strong> lines.</p>
 
 </div>
 </div>
@@ -13315,9 +13346,10 @@ If you think your loop works (read: it doesn't crash immediately), then check in
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>4 Now it's up to you! Here you have another variant of the loop I made above. 
+<p>Now it's up to you! Here you have another variant of the loop I made above. 
 Substitute the <code>ls</code> command for a <code>bwa</code> command. 
 Also, note that you can use the variable inside a path!</p>
+<p><strong>[DO:] Map the paired-end reads of each sample to the index scaffolds and save the output as a</strong> <code>.bam</code> <strong>file.</strong></p>
 
 </div>
 </div>
@@ -13343,9 +13375,21 @@ Also, note that you can use the variable inside a path!</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If the loop is running, then proceed to the next notebook.
+<p>TIP: If you are working on your own computer and not some shared server, you can speed up the process substantially by using more threads (CPUs/cores) to do the mapping. 
+Find the amount of cores available on your computer with <code>nproc</code> and read the bwa manual to use more threads.</p>
+<p><strong>[DO:] If the loop is running, then proceed to the next notebook.</strong>
 Check with <code>ls</code> if your files are being created and perhaps if they increase in size over time.
 Then start preparing the next loop: sorting of the bam files.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Some background:</p>
+<blockquote><p>By default, mapping algorithms like bwa spit out a .sam file. The sam format is widely used and accepted by many different downstream programmes. Basically, it's just a big table with a standardised format. Although a sam file is human-readable, it is also rather bulky. The file size of a single SAM file will quickly exceed the disk space you have on this virtual machine. Therefore, we convert it to a BAM file, a Binary sAM file. There is no loss of information; it is just saved much more efficiently. Naturally, a binary file is not human readable. Always store your files as bam files. If you need to have a look in the bam file, you can view them using <code>samtools view</code> or any of the many downstream programmes available online.</p>
+</blockquote>
 
 </div>
 </div>

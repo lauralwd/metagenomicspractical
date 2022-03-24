@@ -13089,10 +13089,13 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Genome-annotation-with-Prokka">Genome annotation with Prokka<a class="anchor-link" href="#Genome-annotation-with-Prokka">&#182;</a></h2><p>Now that we have some extra information about our bins, we can continue to analyse the high-quality bins. The final CheckM results will give you a good overview of the bins with low contamination and high completeness and show the bin's lowest taxonomic rank. Pick a bin that you think is interesting to study further. Alternatively, you may also make a loop to annotate multiple bins.</p>
-<p>With this selected bin(s), we are going to do some genome annotation. Whole-genome annotation is the process of identifying features of interest in a set of genomic DNA sequences and labelling them with useful information. Prokka is a software tool to annotate bacterial, archaeal and viral genomes quickly and produce standards-compliant output files.</p>
-<p><b>Assignment:</b><br>
-Have a look at the prokka help pages below and come up with the right command to run prokka. (HINT: look at the Usage tag to run prokka on default mode, think of threads, use <code>--cpus 1 --centre X --compliant</code> to stop prokkas complaints about ugly contig names, direct the output towards data/prokka).</p>
+<h1 id="Genome-annotation-with-prokka">Genome annotation with <code>prokka</code><a class="anchor-link" href="#Genome-annotation-with-prokka">&#182;</a></h1><p>Now that we have some extra information about our bins, we can continue to analyse the high-quality bins. 
+The final CheckM results will give you a good overview of the bins with low contamination and high completeness and show the bin's lowest taxonomic rank. 
+Pick a bin that you think is interesting to study further. 
+Alternatively, you may also make a loop to annotate multiple bins.</p>
+<p>With this selected bin(s), we are going to do genome annotation. 
+Whole-genome annotation is the process of identifying features of interest in a set of genomic DNA sequences and labelling them with useful information. 
+<code>Prokka</code> is a software tool to annotate bacterial, archaeal and viral genomes quickly and produce standards-compliant output files.</p>
 
 </div>
 </div>
@@ -13100,7 +13103,7 @@ Have a look at the prokka help pages below and come up with the right command to
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>make a directory for the prokka output:</p>
+<p><strong>[DO:] make a directory for the</strong> <code>prokka</code> <strong>output:</strong></p>
 
 </div>
 </div>
@@ -13121,7 +13124,8 @@ Have a look at the prokka help pages below and come up with the right command to
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>prokka help page:</p>
+<p><strong>[DO:] read the prokka help page</strong>
+Remember to look for the usage line.</p>
 
 </div>
 </div>
@@ -13142,7 +13146,9 @@ Have a look at the prokka help pages below and come up with the right command to
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>run prokka:  This may take a while.</p>
+<p>Use the options <code>--centre X --compliant</code> to stop prokkas complaints about ugly contig names.</p>
+<p><strong>[DO:] run prokka:</strong>
+This may take a while.</p>
 
 </div>
 </div>
@@ -13152,7 +13158,7 @@ Have a look at the prokka help pages below and come up with the right command to
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>prokka ..path/to/bin/ --outdir ..output/path/..  --cpus <span class="m">1</span> --centre X --compliant
+<div class=" highlight hl-bash"><pre><span></span>prokka
 </pre></div>
 
     </div>
@@ -13163,41 +13169,10 @@ Have a look at the prokka help pages below and come up with the right command to
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>(think and discuss these questions) <br></p>
-<p>What did you do? <br>
-Where is your output? <br>
-What does your output look like? <br>
-Do you know what all the output files are or mean? <br></p>
-<p>(HINT: you can look at the prokka files in the same way we looked at the reads and scaffold earlier).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><b>investigating prokka output</b><br>
-The prokka output is very elaborate and can be used to many ends. We will quickly visualise the output for the purpose of this practical. To investigate the prokka output, you can use two webservers that both can place the annotations from prokka in metabolic KEGG pathways.<br></p>
-<p>(1) prokka gives UniProt IDs in the gff files first we will collect these IDs,
-(2) since we have Uniprot IDs from prokka, we are going to convert these to <strong>KO IDs</strong> that can be used by KEGG using this website:<br>
-<a href="http://www.uniprot.org/uploadlists/">http://www.uniprot.org/uploadlists/</a></p>
-<p>(3) Make sure to download the 'mapping table'. This table is the input for KEGG. The 'target list' you can upload on the pathways.embl.de webpage. In these web pages (links below), you can investigate the metabolism of your specific bin (in the ideal world: your specific microbe) by investigating which genes make complete pathways.</p>
-<p>You may feel overwhelmed by the number of pathways, modules and genes available to you. For this specific case, we are interested in Nitrogen metabolism. You may have a look at the Dijkhuizen et al. 2018 paper on Azolla endophytes. Figure 4 of that paper shows the nitrogen metabolism of multiple microbes is plotted. Next, some hypotheses are derived and tested in the wet lab. Does your plot of the nitrogen metabolism overlap with the one published? Or did you maybe discover a new endophyte!</p>
-<p><a href="http://www.genome.jp/kegg/tool/map_module.html">http://www.genome.jp/kegg/tool/map_module.html</a><br>
-<a href="https://pathways.embl.de/ipath3.cgi?map=metabolic">https://pathways.embl.de/ipath3.cgi?map=metabolic</a><br></p>
+<h2 id="Investigating-prokka-output">Investigating prokka output<a class="anchor-link" href="#Investigating-prokka-output">&#182;</a></h2><p>The prokka output is very elaborate and can be used to many ends. 
+We will quickly visualise the output for the purpose of this practical. 
+To investigate the prokka output, you can use two webservers that both can place the annotations from prokka in metabolic KEGG pathways.
+First, we'll inspect the contents of a GFF file.</p>
 
 </div>
 </div>
@@ -13205,7 +13180,7 @@ The prokka output is very elaborate and can be used to many ends. We will quickl
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>view prokka output: (look for the <code>.gff</code> file)</p>
+<p><strong>[DO:] View prokka output:</strong> (look for the <code>.gff</code> file)</p>
 
 </div>
 </div>
@@ -13226,7 +13201,11 @@ The prokka output is very elaborate and can be used to many ends. We will quickl
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>take the uniprot IDs out of the gff file</p>
+<h2 id="Visualisation-in-IPath3-onpathways.embl.de">Visualisation in IPath3 onpathways.embl.de<a class="anchor-link" href="#Visualisation-in-IPath3-onpathways.embl.de">&#182;</a></h2><p>For visualisation in <a href="https://pathways.embl.de/ipath3.cgi?map=metabolic">pathways.embl.de</a> we need to add the word 'UNIRPOT:' to the list of IDs like so:</p>
+<p>Prokka gives UniProt IDs in the gff files first we will collect these IDs and discard all other information.
+However, we need to make sure that IPath3 understands these are UniprotIDs. 
+The code below helps you to do so.</p>
+<p><strong>[DO:] take the uniprot IDs out of the gff file:</strong></p>
 
 </div>
 </div>
@@ -13236,13 +13215,62 @@ The prokka output is very elaborate and can be used to many ends. We will quickl
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>grep -o <span class="s1">&#39;UniProt.*&#39;</span> ....yourprokkaoutput <span class="p">|</span> cut -d<span class="s1">&#39;;&#39;</span> -f1 <span class="p">|</span> cut -d<span class="s1">&#39;:&#39;</span> -f2 &gt; listofuniprotIDs
+<div class=" highlight hl-bash"><pre><span></span>grep -o <span class="s1">&#39;UniProt.*&#39;</span> ....yourprokkaoutput <span class="p">|</span> cut -d<span class="s1">&#39;;&#39;</span> -f1 <span class="p">|</span> cut -d<span class="s1">&#39;:&#39;</span> -f2 <span class="p">|</span> sed <span class="s1">&#39;s/^/UNIPROT:/g&#39;</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[DO:] Go to the the website linked above, and past in your IDs in the search field.</strong> You can now browse through the pathways encoded by those genes.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Visualising-in-KEGG">Visualising in KEGG<a class="anchor-link" href="#Visualising-in-KEGG">&#182;</a></h2><p>Visualising in KEGG ( the Kyoto Encyclopedia of Genes and Genomes) allows us to zoom in further into the metabolism.
+The best way to approach this, is to take all protein sequences produced by prokka (the <code>.faa file</code>) and do a protein blast to the KEGG database with <a href="https://www.kegg.jp/blastkoala/">blastKOala</a>.
+This takes quite some time and requires an account, so I did this for you already.
+The files are available in the <code>data/blastKOala</code> directory.
+Note that the bin numbers may not match up between my example and your own run, this is just for illustration of what's possible with the method.</p>
+<p><strong>[DO:] Upload and visualise these simple tables on <a href="https://www.genome.jp/kegg/mapper/reconstruct.html">KEGG reconstruct pathway</a></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>ls data/blastKOala
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You may feel overwhelmed by the number of pathways, modules and genes available to you. 
+For this specific case, we are interested in Nitrogen metabolism. 
+You may have a look at the 
+<a href="https://nph.onlinelibrary.wiley.com/doi/10.1111/nph.14843">Dijkhuizen et al. 2018 paper on Azolla endophytes</a>. 
+Find of that paper, this shows the nitrogen metabolism of multiple microbes. 
+Next, some hypotheses are derived and tested in the wet lab. 
+Does your plot of the nitrogen metabolism overlap with the one published? 
+Or did you maybe discover a new endophyte!</p>
+
+</div>
+</div>
 </div>
     </div>
   </div>

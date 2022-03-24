@@ -13091,8 +13091,9 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Sorting-bam-files">Sorting bam files<a class="anchor-link" href="#Sorting-bam-files">&#182;</a></h1><p>BAM files are Binary sAM files. 
 SAM files are nothing more than big tables that tell us what read from the FastQ file, mapped where exactly on the scaffolds of the metagenome assembly. 
-The rows of this table that we call a SAM file are not ordered in any logical way. 
-For many <a href="https://www.google.com/search?client=ubuntu&amp;hs=tg5&amp;channel=fs&amp;ei=3vYPW9uDOumRgAbF3LHoCw&amp;q=why+sorting+is+necessary&amp;oq=why+sort&amp;gs_l=psy-ab.3.2.35i39k1j0l2j0i20i263k1j0l6.2238.7325.0.11765.8.8.0.0.0.0.76.455.8.8.0....0...1c.1.64.psy-ab..0.8.454...0i67k1j0i203k1.0.EJEFo_3okmA">computational purposes</a>, we want to sort/order these rows according to</p>
+The rows of this table that we call a SAM file are not ordered in any logical way.
+When just mapped, the order resembles the (random) order of the reads in the original fastq file.</p>
+<p>For many <a href="https://www.google.com/search?client=ubuntu&amp;hs=tg5&amp;channel=fs&amp;ei=3vYPW9uDOumRgAbF3LHoCw&amp;q=why+sorting+is+necessary&amp;oq=why+sort&amp;gs_l=psy-ab.3.2.35i39k1j0l2j0i20i263k1j0l6.2238.7325.0.11765.8.8.0.0.0.0.76.455.8.8.0....0...1c.1.64.psy-ab..0.8.454...0i67k1j0i203k1.0.EJEFo_3okmA">computational purposes</a>, we want to sort/order these rows according to</p>
 <ol>
 <li>the scaffold they mapped on</li>
 <li>the position on that scaffold. (position in bp)</li>
@@ -13145,7 +13146,7 @@ Perhaps google how a sam/bam file should look and see if it corresponds to what 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Another-loop">Another loop<a class="anchor-link" href="#Another-loop">&#182;</a></h2><p>We have seen how to make a loop in the m3 part of this practical.
+<h2 id="Another-loop">Another loop<a class="anchor-link" href="#Another-loop">&#182;</a></h2><p>We have seen how to make a loop in the backmapping part of this practical.
 Now let's do the same and sort the BAM files we created earlier.</p>
 <p>Before you start, create a new folder where you store your <em>sorted</em> BAM files.
 I suggest something like <code>data/sorted</code></p>
@@ -13163,6 +13164,14 @@ Edit in a way so that the loop sorts your bam files.</p>
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[DO:] make a new directory to store your sorted bam files</strong></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
@@ -13175,6 +13184,15 @@ Edit in a way so that the loop sorts your bam files.</p>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[DO:] use</strong> <code>samtools sort</code> <strong>to sort the bamfiles</strong>. 
+Make sure to store them in your new directory.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13195,7 +13213,7 @@ Edit in a way so that the loop sorts your bam files.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="check">check<a class="anchor-link" href="#check">&#182;</a></h2><p>After sorting, again check whether your bam files are sorted correctly.</p>
+<h2 id="check">check<a class="anchor-link" href="#check">&#182;</a></h2><p><strong>[DO:] After sorting, check whether your bam files are sorted correctly.</strong></p>
 <ol>
 <li>Use <code>ls --size</code> to see if the files exist and have a proportional size</li>
 <li>run samtools view to view your BAM files.</li>
@@ -13236,6 +13254,7 @@ Edit in a way so that the loop sorts your bam files.</p>
 <h2 id="clean">clean<a class="anchor-link" href="#clean">&#182;</a></h2><p>Did your bam files sort correctly? 
 Then remove the unsorted bam files. 
 We don't need these anymore and we save some disk space.</p>
+<p><strong>[DO:] If you are sure, then remove the mapped directory by adding the appropriate option to the command below</strong></p>
 
 </div>
 </div>

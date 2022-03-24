@@ -13089,14 +13089,17 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="binning">binning<a class="anchor-link" href="#binning">&#182;</a></h2><p>Now, we continue the binning procedure with metabat. In this notebook, we will create the actual bins! We will need</p>
+<h1 id="Binning-part-2:-create-bins-with-metabat2">Binning part 2: create bins with <code>metabat2</code><a class="anchor-link" href="#Binning-part-2:-create-bins-with-metabat2">&#182;</a></h1><p>Now, we continue the binning procedure with <code>metabat2</code>.
+In this notebook, we will create the actual bins! 
+We will need:</p>
 <ul>
 <li>The scaffolds of the assembly, to bin.</li>
-<li>The depth matrix we made with the jgi script</li>
+<li>The depth matrix we made with the jgi script in binning part1.</li>
 <li>A new folder, to store the newly created bins.</li>
 </ul>
-<p>First, remember where the first two items listed above are. Use <code>ls</code> to confirm in the cell below.</p>
-<p>Scaffolds are located at</p>
+<p>First, remember where the first two items listed above are. 
+Use <code>ls</code> to confirm in the cell below.</p>
+<p><strong>[DO:] Locate the scaffolds file:</strong></p>
 
 </div>
 </div>
@@ -13117,7 +13120,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>depth matrix is located at</p>
+<p><strong>[DO:] Locate the depth matrix:</strong></p>
 
 </div>
 </div>
@@ -13138,7 +13141,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now make a new directory to store your bins.</p>
+<p><strong>[DO:] Make a new directory to store your bins.</strong> 
+Make sure this directory is <code>data/bins</code></p>
 
 </div>
 </div>
@@ -13159,11 +13163,9 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now read the help page, the command is <code>metabat2</code></p>
+<p><strong>[DO:] Read the help page of</strong> <code>metabat2</code></p>
 <p>Find out which options you have to use minimally, then make sure you tell MetaBAT to use one thread only!</p>
-<p>supply your depth matrix as the --abdFile. Short for AbundanceFile.</p>
-<blockquote><p>By default, metabat uses all threads. If all of us use all threads at the same time, the server will most certainly crash.</p>
-</blockquote>
+<p>Supply your depth matrix as the --abdFile. Short for AbundanceFile.</p>
 
 </div>
 </div>
@@ -13184,7 +13186,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>run metabat:</p>
+<p><strong>[DO:] Bin your scaffolds with</strong> <code>metabat2</code> <strong>:</strong></p>
 
 </div>
 </div>
@@ -13205,24 +13207,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="visualisation">visualisation<a class="anchor-link" href="#visualisation">&#182;</a></h2><p>Now we have our metagenome binned! Congratulations. Let's try to visualise this similarly as done in <code>m5-binning-par1</code>. We will use some command line tricks to get all data in a similar sheet. In this case, these are given to you already. However, please do try to reverse engineer the code and understand what is happening.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>In the cell below, we make an empty file with a header in which we will make our table. </li>
-<li>Then we move to the folder in which we made the bins. </li>
-<li>In this folder, we start a loop for each file that ends with <code>.fa</code></li>
-<li>For each <code>.fa</code> file, we extract the bin number and make a variable that we call <code>name</code></li>
-<li>Continuing in this iteration of the loop, we filter all fasta headers</li>
-<li>directly after filtering, replace the fasta header sign '&gt;' with the <code>name</code> variable defined earlier.</li>
-<li>we end the loop and sort all resulting tables at once on the second column </li>
-<li>after sorting, we append our newly made table to the 'binlist' file we defined earlier.</li>
-</ul>
+<p><strong>[DO:] How many bins were created?</strong> 
+Check the directory where you stored your bins.</p>
 
 </div>
 </div>
@@ -13232,12 +13218,63 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> -e <span class="s1">&#39;bin\tcontigName&#39;</span> &gt; binlist
+<div class=" highlight hl-bash"><pre><span></span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[Q:] Did you get more or less bins than expected from the length/depth plot you made earlier?</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[A:]</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="visualisation">visualisation<a class="anchor-link" href="#visualisation">&#182;</a></h2><p>Now we have our metagenome binned!
+Congratulations.
+Let's try to visualise this similarly as done in Binning part 1. 
+We will use some command line tricks to get all data in a similar sheet.
+In this case, these are given to you already.
+If you feel up to the challenge, try to reverse engineer the code and understand what is happening.</p>
+<p><strong>[DO:] Run the code below to make</strong> <code>data/binlist.txt</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="c1"># First, we make an empty file with a header in which we will make our table. </span>
+<span class="nb">echo</span> -e <span class="s1">&#39;bin\tcontigName&#39;</span> &gt; binlist
+<span class="c1"># Then we move to the folder in which we made the bins. </span>
 <span class="nb">cd</span> ./data/bins/
+<span class="c1"># Now, we start a loop for each file that ends with `.fa`</span>
 <span class="k">for</span> f <span class="k">in</span> *.fa
-<span class="k">do</span>  <span class="nv">name</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$f</span> <span class="p">|</span> cut -d <span class="s1">&#39;.&#39;</span> -f <span class="m">2</span><span class="k">)</span>
+<span class="k">do</span>  <span class="c1"># For each `.fa` file, we extract the bin number and make a variable that we call `name`</span>
+    <span class="nv">name</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$f</span> <span class="p">|</span> cut -d <span class="s1">&#39;.&#39;</span> -f <span class="m">2</span><span class="k">)</span>
+    <span class="c1"># Continuing in this iteration of the loop, we filter all fasta headers</span>
     grep <span class="s1">&#39;&gt;&#39;</span> <span class="nv">$f</span> <span class="p">|</span> sed <span class="s2">&quot;s/^&gt;/</span><span class="nv">$name</span><span class="s2">\t/g&quot;</span>
-<span class="k">done</span> <span class="p">|</span> sort -k2 -V &gt;&gt; ../../binlist
+<span class="k">done</span> <span class="p">|</span> sort -k2 -V &gt;&gt; ../binlist.txt
+<span class="c1"># directly after filtering, replace the fasta header sign &#39;&gt;&#39; with the `name` variable defined earlier.</span>
+<span class="c1"># we end the loop and sort all resulting tables at once on the second column </span>
+<span class="c1"># after sorting, we append our newly made table to the &#39;binlist&#39; file we defined earlier.</span>
 <span class="nb">cd</span> ../../
 </pre></div>
 
@@ -13249,7 +13286,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now let's check, how does the file look:</p>
+<p><strong>[DO:] Check what the file looks like:</strong></p>
 
 </div>
 </div>
@@ -13259,7 +13296,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>head binlist
+<div class=" highlight hl-bash"><pre><span></span>head data/binlist.txt
 </pre></div>
 
     </div>
@@ -13270,7 +13307,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's compare these with the names we have in our depth_matrix. They must be exactly the same to join these two different tables into one.</p>
+<p><strong>[DO:] compare these with the names we have in our depth_matrix.txt.</strong>
+They must be exactly the same to join these two different tables into one.</p>
 
 </div>
 </div>
@@ -13291,9 +13329,21 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now, we use the <code>join</code> command to join the two tables. There must be a shared field in both tables. In the first table, this is the second column <code>-1 2</code>, and in the second file, this is the first column <code>-2 1</code>.</p>
-<p>We then take both files and give them to the join command. However, since <code>join</code> is very picky in how files are sorted, we re-sort them on-the-fly like so <code>&lt;(sort -k2d ./somefile.txt)</code> (second column, sort as dictionary).</p>
+<p>Now, we use the <code>join</code> command to join the two tables.
+There must be a shared field in both tables.
+In the first table, this is the second column <code>-1 2</code>, and in the second file, this is the first column <code>-2 1</code>.</p>
+<p>We then take both files and give them to the join command.
+However, since <code>join</code> is very picky in how files are sorted, we re-sort them on-the-fly like so <code>&lt;(sort -k2d ./somefile.txt)</code> (second column, sort as dictionary).</p>
 <p>Lastly, since both files have headers, we supply the <code>--header</code> option and save the result as a new file.</p>
+<p>Notice that I use the <code>\</code> character to spread out this very long <code>join</code> commandline over several lines.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[DO:] fill in the path to your depth matrix below and run the code</strong></p>
 
 </div>
 </div>
@@ -13303,7 +13353,12 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>join -1 <span class="m">2</span> -2 <span class="m">1</span> &lt;<span class="o">(</span>sort -k2d ./binlist<span class="o">)</span> &lt;<span class="o">(</span>sort -k1d &lt;&lt;your original depth matrix&gt;&gt;<span class="o">)</span> --header <span class="p">|</span> tr <span class="s1">&#39; &#39;</span> <span class="s2">&quot;\t&quot;</span> &gt; binned_depth_matrix.tab
+<div class=" highlight hl-bash"><pre><span></span>join -1 <span class="m">2</span> -2 <span class="m">1</span>                                         <span class="se">\</span>
+     &lt;<span class="o">(</span>sort -k2d ./data/binlist<span class="o">)</span>                       <span class="se">\</span>
+     &lt;<span class="o">(</span>sort -k1d &lt;&lt;...your original depth matrix...&gt;&gt;<span class="o">)</span> <span class="se">\</span>
+     --header                                          <span class="se">\</span>
+     <span class="p">|</span> tr <span class="s1">&#39; &#39;</span> <span class="s2">&quot;\t&quot;</span>                                     <span class="se">\</span>
+     &gt; ./data/binned_depth_matrix.tab
 </pre></div>
 
     </div>
@@ -13314,17 +13369,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[DO:] Visualise the binned_depth_matrix.tab in excel</strong></p>
 <ol>
-<li><p>Like we did before, download this resulting table <code>binned_depth_matrix.tab</code> and open it in excel.</p>
-</li>
-<li><p>Sort the file by the bin number.</p>
-</li>
-<li><p>Erase columns you do not want to visualise</p>
-</li>
-<li><p>Use conditional formatting to visualise depth profiles over the different samples per bin.</p>
-</li>
+<li>Like we did before, download this resulting table <code>binned_depth_matrix.tab</code> and open it in excel.</li>
+<li>Sort the file by the bin number. </li>
+<li>Erase columns you do not want to visualise</li>
+<li>Use conditional formatting to visualise depth profiles over the different samples per bin. </li>
 </ol>
-<p>Does this colour pattern make more sense than it did before? Is there any outliers or mistakes you can spot?</p>
+<p><strong>[Q:] Does this colour pattern make more sense than it did before?</strong></p>
 
 </div>
 </div>
@@ -13332,9 +13384,75 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Bin-depth">Bin depth<a class="anchor-link" href="#Bin-depth">&#182;</a></h2><p>Can you determine the depth of the six bins from this table? Think about the difference between depth and coverage. You will likely need to make a pivot table in excel/LibreOffice/googledrive.</p>
-<p>One step further, can you determine the depth of each bin per sample we mapped! In other words, which bin is abundance in which sample type The E samples, or the P samples?</p>
-<p>The research this practical is based on focusses on microbes inside the leaves (L samples). Which bins would you advise me to study further?</p>
+<p><strong>[A:]</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[Q:] Are there any outliers or mistakes you can spot?</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[A:]</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Bin-depth">Bin depth<a class="anchor-link" href="#Bin-depth">&#182;</a></h2><p><strong>[Q:]Can you determine the depth of the six bins from this table? Why is this not taking the mean of all depths?</strong>
+Think about the difference between depth and coverage.
+You will need to make a pivot table in excel/LibreOffice/googledrive.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[A:]</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[Q:] Can you determine the depth of each bin per sample(type)?</strong>
+In other words, which bin is abundant in the L samples, and which bin is abundant in the P samples.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[A:]</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[Q:] The research this practical is based on focusses on microbes inside the leaves (L samples).
+Which bins would you advise me to study further?</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[A:]</strong></p>
 
 </div>
 </div>
@@ -13352,7 +13470,8 @@ For each variation, make sure you save the bins in a separate directory with a c
 <p>To modify your depth matrix, have a look at the collumns present:</p>
 
 <pre><code>head -n 3 &lt;&lt;your depth matrix&gt;&gt;</code></pre>
-<p>You can select certain columns with the cut command. This example shows you how to select only one replicate of one sample type and save this as a separate depth matrix.</p>
+<p>You can select certain columns with the cut command.
+This example shows you how to select only one replicate of one sample type and save this as a separate depth matrix.</p>
 
 <pre><code>cut -f 1-3,10,11 data/depth_matrix &gt; data/depth_matrix_P1</code></pre>
 
