@@ -1,8 +1,7 @@
 This is the home page of the metagenomics practical by Laura Dijkhuizen.
 Click [here](/) to go back to my home page.
 
-
-## about the practical
+## About the practical
 Read more about the practical on the [about page](/metagenomicspractical/about/).
 This includes a basic description, instalation details, and learning goals.
 
@@ -25,7 +24,7 @@ Prokka mapping tables for visualisation in KEGG are stored in the main branch of
 These files should be available in the GitHub repo you cloned yourself.
 You can make these yourself with the prokka protein files and blastKOala online as well.
 
-## blank example of the practical
+## Blank example of the practical
 Find the GitHub page for the practical [here](https://github.com/lauralwd/metagenomicspractical). 
 Blank static examples of the practical pages are available through the links below: 
 * [m00 prepare, download and subset reads](practical_pages/m00-prepare_download_and_subset_reads.html)
@@ -42,7 +41,7 @@ Blank static examples of the practical pages are available through the links bel
 * [m11 bonus: bin taxonomy](practical_pages/m11-bonus_exercise_bin_taxonomy.html)
 
 
-## example code / answers
+## Example code / answers
 A branch of the original GitHub repository contains the practical with worked out examples and some intermediate files.
 Find [this branch here](https://github.com/lauralwd/metagenomicspractical/tree/example) or browse through them as static html pages.
 Static pages with pre-filled code can be found through the links below:
