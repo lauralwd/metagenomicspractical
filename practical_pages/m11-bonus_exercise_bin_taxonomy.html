@@ -13089,43 +13089,50 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Bin-taxonomy">Bin taxonomy<a class="anchor-link" href="#Bin-taxonomy">&#182;</a></h1><p>For those of you that are very fast, we will determine Bin taxonomy. 
-This is a very computationally intensive task; if you can run this overnight, then do. 
-Otherwise, you can skip it. 
-Also check if the server has sufficient memmory to do this task! 
-See the code below.</p>
-<p>Taxonomy determination can be done by certain marker genes present in a bin or by the gene content of a bin.
-The former is what checkm normally does, except we don't have to resources to do that today.
-The latter is what a tool called CAT does, not the same as <code>cat</code>.
-CAT, the Contig Annotation Tool, finds all open reading frames in a contig or bin, blasts this to the blast protein database, and combines all results to predict taxonomy of a contig or bin.</p>
-<p>Install CAT via conda as you did with checkm. Create a new environment Named 'cat', using the Channel 'bioconda', installing 'CAT' and 'diamond' version 0.9.21.</p>
-<p><code>conda create -n cat -c bioconda CAT diamond=0.9.21</code></p>
-<p><code>conda activate cat</code></p>
-<p>And run CAT like this.
-Note that you should fill two things:</p>
-<ol>
-<li>The path to your bins with the <code>-b</code> option</li>
-<li>An output prefix with the <code>-o</code> option.</li>
-</ol>
-<p><code>CAT bins -b &lt;&lt;/path/to/your/bins&gt;&gt; -d /projects/03b52fdc-4de1-4e3f-924b-2de9148c4f74/metagenomics_reference_databases/CAT_prepare_20190719/2019-07-19_CAT_database/ -t /projects/03b52fdc-4de1-4e3f-924b-2de9148c4f74/metagenomics_reference_databases/CAT_prepare_20190719/2019-07-19_taxonomy/ -s fa -n 1 -o &lt;&lt;/path/to/your/output/prefix&gt;&gt;</code></p>
+<h1 id="Bin-taxonomy">Bin taxonomy<a class="anchor-link" href="#Bin-taxonomy">&#182;</a></h1><p>Bin taxonomy was already determined by <code>checkm</code> by searching for certain marker genes.
+An alternative method is to blast all protein coding genes to the nr protein database of ncbi blast, and then retreiving the last common ancestor of the good hits you get.
+This sounds like a lot of work, luckily there is a tool that does just this!
+CAT, the Contig Annotation Tool, can determine the taxonomy of a contig or a bin.
+This is a very computationally intensive task and you need to download a huge database to your local computer.</p>
+<p>CAT is not installed in the default conda environment, so open up a terminal and install it.</p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Enough-memory?">Enough memory?<a class="anchor-link" href="#Enough-memory?">&#182;</a></h3><p>Only run the command above if there is more than 20GB of RAM available, use the command below to check:</p>
+<pre><code>conda install -c bioconda cat</code></pre>
+<p>If you run into trouble, creating a separate environment helped for me:</p>
+
+<pre><code>conda create -n cat -c bioconda CAT diamond=0.9.21
+conda activate cat</code></pre>
+<p><strong>[DO:]</strong> Download a CAT database here: tbb.bio.uu.nl/bastiaan/CAT_prepare/</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>free -g
+<div class=" highlight hl-bash"><pre><span></span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[DO:]</strong> If that's setup, read the CAT manual, and go ahead!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>
 </pre></div>
 
     </div>
