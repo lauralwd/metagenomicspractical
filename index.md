@@ -1,5 +1,7 @@
 This is the home page of the metagenomics practical by Laura Dijkhuizen.
-Click [here](/) to go back to my home page.
+Click [here](/) to go to my personal home page, 
+or go to the [github repository](https://github.com/lauralwd/metagenomicspractical) containing the practical files.
+A [separate branch](https://github.com/lauralwd/metagenomicspractical/tree/example) of the same GitHub repository contains answers and example code of the practical.
 
 ## About the practical
 Read more about the practical on the [about page](/metagenomicspractical/about/).
