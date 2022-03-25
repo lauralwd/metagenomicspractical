@@ -8,7 +8,7 @@ Read more about the practical on the [about page](/metagenomicspractical/about/)
 This includes a basic description, instalation details, and learning goals.
 
 ## Materials
-FastQC reports for the paired end reads of one sample are available here online.
+FastQC reports for the paired end reads of the L1 sample are available here online.
 * [Forward reads](fastqc_reports/L1.R1.fastqcreport.html)
 * [Reverse reads](fastqc_reports/L1.R2.fastqcreport.html)
 
