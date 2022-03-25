@@ -7,6 +7,15 @@ A [separate branch](https://github.com/lauralwd/metagenomicspractical/tree/examp
 Read more about the practical on the [about page](/metagenomicspractical/about/).
 This includes a basic description, instalation details, and learning goals.
 
+In the workflow thought here, you start with a metagenome assembly like this one:
+
+![metagenome assembly graph](data/assembly/scaffolds_graph.png)
+
+The practical is closed by browsing through the metabolic capacity of the microbial genomes you'll find. 
+For example like this:
+
+![](data/annotation/all_bins_nitrogen_metabolism.png)
+
 ## Materials
 FastQC reports for the paired end reads of the L1 sample are available here online.
 * [L1 Forward reads](fastqc_reports/L1.R1.fastqcreport.html)
