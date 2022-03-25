@@ -12,7 +12,9 @@ In the workflow thought here, you start with a metagenome assembly like this one
 ![metagenome assembly graph](data/assembly/scaffolds_graph.png)
 
 The practical is closed by browsing through the metabolic capacity of the microbial genomes you'll find. 
-For example like this:
+For example like in the snapshot below.
+This picture shows genes encoding the nitrogen cycle and the presence of these genes in the bins acquired during the practical.
+The various colours indicate the different bins found during the practical.
 
 ![](data/annotation/all_bins_nitrogen_metabolism.png)
 
