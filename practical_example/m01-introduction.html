@@ -93,7 +93,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -273,7 +273,7 @@ td,
 th {
   padding: 0;
 }
-/*! Source: https://github.com/h5bp/html5-boilerplate/blob/main/src/css/main.css */
+/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
   *,
   *:before,
@@ -13093,7 +13093,8 @@ div#notebook {
 It was developed as part of the Introduction To Bioinformatics for Life-Sciences course at Utrecht University.
 A metagenome is the collection of genomes of micro-organisms associated with a specific organ or organism.
 Whether you are a plant biologist or a medical doctor, the techniques you learn in this practical apply to metagenomics on all kinds of organisms or organs. 
-In this particular experiment, we focus on bacterial micro-organisms.</p>
+In this particular experiment, we focus on bacterial micro-organisms.
+Intermediate files, answers and extra information can be found on the practical <a href="https://lauradijkhuizen.com/metagenomicspractical/">home page</a></p>
 <p>The fern genus <em>Azolla</em> is known for its endophytes: microorganisms that live inside the plant. 
 These microorganisms live specifically inside a leaf cavity in every upper leaf lobe of the plant. 
 One of these endophytes has been known for a long time: <em>Nostoc azollae</em>.
@@ -13125,8 +13126,30 @@ Note that often, Illumina machines sequence the two outer ends of a single DNA m
 We call these <strong>paired-end</strong> sequences. 
 For a quick illustration of how Illumina machines work, have a look at this <a href="https://www.youtube.com/watch?v=fCd6B5HRaZ8">video</a>.</p>
 <h2 id="Samples-from-a-database">Samples from a database<a class="anchor-link" href="#Samples-from-a-database">&#182;</a></h2><p>For publication, authors often are required to also upload the raw data on which their publication is based. 
-For sequencing data, the NCBI Short Read Archive (SRA) and the EBI European Nucleotide Archive (ENA) serve this purpose. 
-If you have time to spare between the calculation steps, try to find the sequencing data of the above-mentioned paper in one of these archives.</p>
+For sequencing data, the NCBI Short Read Archive (SRA) and the EBI European Nucleotide Archive (ENA) serve this purpose.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>[Q:] Find the paper linked above and find the sequencing data it refers to in the EBI ENA database: <a href="https://www.ebi.ac.uk/ena/browser/home">https://www.ebi.ac.uk/ena/browser/home</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>[A]</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="First-Quality-Control-and-processing.">First Quality Control and processing.<a class="anchor-link" href="#First-Quality-Control-and-processing.">&#182;</a></h2><p>FastQ files contain the output of the Illumina sequencing machine: tens of millions of short DNA sequences. 
 In this context, short is anything between 50 and 250 basepairs. 
 These original short DNA sequences are further referred to as DNA reads, or just reads. 
@@ -13141,27 +13164,58 @@ FastQ files contain the unprocessed output of the machine, every read consists o
 This measure of quality is called a <a href="https://en.wikipedia.org/wiki/Phred_quality_score">phred score</a>. 
 The sequencing machine assigns this phred score based on "how sure it is" that this specific base is correct.</p>
 <p>These are two reads encoded in a FastQ file.</p>
-<blockquote><p>@NS500813:28:H3M3VAFXX:1:11101:19270:1015 1:N:0:CGATGT <br>
-GNGGTGAAGAAATCAGCCATTCTAAACCACACTAATTTAGATTGCTCTCCAAGGA <br></p>
-<ul>
-<li><br>
-A#AAAEEEEEEEEEEEEEA#EEEEEEEEEEEEEEEEEEEAEEEEE+/EEEEEEEEEEE <br>
-@NS500813:28:H3M3VAFXX:1:11101:24948:1015 1:N:0:CGATGT <br>
-ANATTAATTATACAATCACTAATTTACACTAATTTAGGCAGAGCATTTAGAAAGTGC <br>
-+<br>
-A#AAAAEEEEE6EEEEEEEEEEAEEEEE+/EEEEEEEAEEA#EEEEEEEEEEEEEEEE <br></li>
-</ul>
-</blockquote>
+
+<pre><code>@NS500813:28:H3M3VAFXX:1:11101:19270:1015 1:N:0:CGATGT
+GNGGTGAAGAAATCAGCCATTCTAAACCACACTAATTTAGATTGCTCTCCAAGGA
++
+A#AAAEEEEEEEEEEEEEA#EEEEEEEEEEEEEEEEEEEAEEEEE+/EEEEEEEEEEE
+@NS500813:28:H3M3VAFXX:1:11101:24948:1015 1:N:0:CGATGT
+ANATTAATTATACAATCACTAATTTACACTAATTTAGGCAGAGCATTTAGAAAGTGC
++
+A#AAAAEEEEE6EEEEEEEEEEAEEEEE+/EEEEEEEAEEA#EEEEEEEEEEEEEEEE</code></pre>
 <p>FastQ files often contain some reads of poor quality, we definitively want to filter those out before starting our analyses. 
 There are many ways available, for today's practical, this was done for you already with a tool called <a href="https://academic.oup.com/bioinformatics/article-abstract/30/15/2114/2390096">trimmomatic</a>.</p>
 <p>Before and after trimming, general Quality Control (QC( of a FastQ file is assessed with a tool called FastQC. 
 The FastQC reports are rendered as html pages so we can view them in our web browsers. 
 You can find the FastQC reports for this practical here:</p>
 <ul>
-<li><a href="https://sites.google.com/view/metagenomicsfastqcfiles/e1-r1">Sample E1 forward</a></li>
-<li><a href="https://sites.google.com/view/metagenomicsfastqcfiles/e2-r2">Sample E1 reverse</a></li>
+<li><a href="https://lauradijkhuizen.com/metagenomicspractical/fastqc_reports/L1.R1.fastqcreport.html">Sample L1 forward</a></li>
+<li><a href="https://lauradijkhuizen.com/metagenomicspractical/fastqc_reports/L1.R2.fastqcreport.html">Sample L1 reverse</a></li>
+<li><a href="https://lauradijkhuizen.com/metagenomicspractical/fastqc_reports/P1.R1.fastqcreport.html">Sample P1 forward</a></li>
+<li><a href="https://lauradijkhuizen.com/metagenomicspractical/fastqc_reports/P1.R2.fastqcreport.html">Sample P1 reverse</a></li>
 </ul>
-<p>Have a look at the FastQC reports, can we proceed with these sequencing reads?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[DO:] open these FastQC reports and check the quality</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[Q:]</strong> Are there any "red flags"? 
+Do you think these are a problem to continue with the experiment?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[A]</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Filtering">Filtering<a class="anchor-link" href="#Filtering">&#182;</a></h3><p>Finally, we chose here to filter the sequencing data for plant DNA since we are only interested in microbial DNA.
 The sequencing data was rid of any plant DNA by mapping (aligning) the reads to a reference plant genome, that of the host plant <em>Azolla filiculoides</em>.
 Only the sequencing data that did not map anything was kept for further analysis.</p>
@@ -13171,7 +13225,7 @@ This yields the best assembly results.
 A metagenome assembly is different from a regular genome assembly in that it has DNA of multiple species in one sequencing file. 
 Metagenome assembly was achieved with <a href="http://online.liebertpub.com/doi/abs/10.1089/cmb.2012.0021">SPAdes</a>.</p>
 <p>Some more elaborate information of Assembly:</p>
-<blockquote><p>The process of assembly takes the millions of short reads in a fastq file, and processes these to thousands of longer nucleotide sequences. Typically the output is a fasta file with contiguous sequences called contigs (contigs.fasta) or a fasta file with multiple contigs scaffolded based on their relative position and orientation to each other called scaffolds, in a file scaffolds.fasta. Ideally, these scaffolds represent the genome of a single species in the metagenome. This is, however, extremely unlikely when no long-read sequencing method was used. In reality, the assembly process will often produce hundreds or thousands of longer scaffolds where a single species' genome is still represented by multiple sequences in the assembly fasta file.</p>
+<blockquote><p>The process of assembly takes the millions of short reads in a fastq file, and processes these to thousands of longer nucleotide sequences. Typically the output is a fasta file with contiguous sequences called contigs (contigs.fasta) or a fasta file with multiple contigs scaffolded based on their relative position and orientation to each other called scaffolds, in a file scaffolds.fasta. Ideally, these scaffolds represent the genome of a single species in the metagenome. This is, however, extremely unlikely when no long-read sequencing method was used. In reality, the assembly process will often produce hundreds or thousands of longer scaffolds where a single species' genome is still represented by multiple sequences in the assembly fasta file. (Meta)Genome assembly is a complex process. If this has your interest I recommend watching <a href="https://www.youtube.com/watch?v=TNYZZKrjCSk">this video</a> and frankly the entire series that this video is a part of.</p>
 </blockquote>
 <p>In biology, we typically store DNA sequences in fasta files.
 Like a fastQ file, it is a text file with DNA (or protein) sequences. 

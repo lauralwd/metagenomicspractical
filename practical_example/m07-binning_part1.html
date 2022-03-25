@@ -93,7 +93,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -273,7 +273,7 @@ td,
 th {
   padding: 0;
 }
-/*! Source: https://github.com/h5bp/html5-boilerplate/blob/main/src/css/main.css */
+/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
   *,
   *:before,
@@ -13089,10 +13089,15 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2> Binning with MetaBat </h2><p>Now we have all ingredients to continue binning: the scaffolds and bam files containing reads mapped on those scaffolds. In metagenomics, binning is the process of grouping reads or contigs and assigning them to operational taxonomic units. Binning methods can be based on either compositional features, alignment (similarity), or both. Metabat2 uses both the contig depth and tetra-nucleotide frequencies to bin the contigs. Every bin will represent one operational taxonomic unit that can be found in the metagenome.</p>
-<p><b>Assignment:</b><br>
-Run the script jgi_summarize_bam_contig_depths to calculate the average depth per contig. <br>
-Then run metabat to bin the contigs; don't forget to include the previously included contig depths in the metabat command.</p>
+<h1 id="Binning-part-1:-calculate-depth">Binning part 1: calculate depth<a class="anchor-link" href="#Binning-part-1:-calculate-depth">&#182;</a></h1><p>Now we have all ingredients to continue binning: the scaffolds and bam files containing reads mapped on those scaffolds. 
+In metagenomics, binning is the process of grouping reads or contigs and assigning them to operational taxonomic units. 
+Binning methods can be based on either compositional features, alignment (similarity), or both.
+<code>metabat2</code> uses both the contig depth and tetra-nucleotide frequencies to bin the contigs. 
+Every bin will ideally represent one microbial genome from one particular microbe that was in the original DNA extraction.</p>
+<p>The first step in the binning process, is to calculate the contig depths from all bam files that were created before.
+All these depths are stored in one big table, which is then passed to <code>metabat2</code>.
+We achieve this with a script that comes with <code>metabat2</code>: <code>jgi_summarize_bam_contig_depths</code></p>
+<p><strong>[DO:] See how the</strong> <code>jgi_summarize_bam_contig_depths</code> <strong>script works:</strong></p>
 
 </div>
 </div>
@@ -13157,11 +13162,15 @@ Options to control shredding contigs that are under represented by the reads
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>calculate the contig depth per scaffold, use the <code>--outputDepth</code> option. Notice that the help page tells you to supply an arg(ument) where to store the depth output file. Specify a path to a file that this script will create. Something like this</p>
-<blockquote><p>./script --outputDepth /path/to/depth_matrix</p>
+<p>Remember to find the <strong>usage line</strong> first.
+Then make sure you find the <code>--outputDepth</code> option. 
+Notice that the help page tells you to supply an arg(ument) where to store the depth output file. 
+Specify a path to a file that this script will create. Something like this:</p>
+<blockquote><p>./script --outputDepth /path/to/depth_matrix.tab</p>
 </blockquote>
-<p>hint: a glob looks like this directory name/* and includes all files included in the directory</p>
-<p>Try using the <code>*</code> with <code>ls</code> first. List all sorted bam files you created</p>
+<p>Remember than you can use bash to point to multiple files with a "glob" or "asterisk".
+A glob looks like this directory name/* and includes all files included in the directory.</p>
+<p><strong>[DO:] Try using the</strong> <code>*</code> <strong>with</strong> <code>ls</code> <strong>first. List all sorted bam files you created.</strong></p>
 
 </div>
 </div>
@@ -13198,6 +13207,14 @@ Options to control shredding contigs that are under represented by the reads
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[DO:] Run the script</strong> <code>jgi_summarize_bam_contig_depths</code> <strong>to calculate the average depth per contig over all six samples.</strong></p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13252,7 +13269,10 @@ Finished
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The output of this process is the input for MetaBAT in the next step. After the jgi script finishes, make sure you check that the file contains a table. If so, please remove all BAM files. We don't need these anymore.</p>
+<p>The output of this process is the input for MetaBAT in the next step. 
+After the jgi script finishes, make sure you check that the file contains a table. 
+If so, please remove all BAM files. We don't need these anymore.</p>
+<p><strong>[DO:] Check if your depth matrix contains data:</strong></p>
 
 </div>
 </div>
@@ -13297,6 +13317,14 @@ NODE_9_length_472787_cov_23.2794_ID_23901976	472787	3.66833	0.343202	0.345515	0.
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[DO:] When you're sure, remove the sorted bams:</strong></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
@@ -13313,7 +13341,8 @@ NODE_9_length_472787_cov_23.2794_ID_23901976	472787	3.66833	0.343202	0.345515	0.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now you have your depth_matrix, let's take a moment and reflect upon what this matrix does and how it helps in binning the microbial contigs. For this part, we will visualise the depth_matrix file in excel (or a similar spreadsheet editor) on your computer.</p>
+<h2 id="Depth-matrix-visualisation">Depth matrix visualisation<a class="anchor-link" href="#Depth-matrix-visualisation">&#182;</a></h2><p>Now you have your depth_matrix, let's take a moment and reflect upon what this matrix does and how it helps in binning the microbial contigs. 
+For this part, we will visualise the depth_matrix file in excel (or a similar spreadsheet editor) on your computer.</p>
 
 </div>
 </div>
@@ -13321,18 +13350,80 @@ NODE_9_length_472787_cov_23.2794_ID_23901976	472787	3.66833	0.343202	0.345515	0.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Follow these steps:</p>
+<p><strong>[DO:] Follow these steps:</strong></p>
 <ol>
 <li>Download the depth_matrix to your personal computer.</li>
 <li>The depth matrix is a big table in which columns are delimited by TABs. Open your data in excel and make sure all data is displayed as columns</li>
-<li>A: What do the columns represent?</li>
-<li>B: What do the rows represent?</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li><strong>[Q:] interpret the table</strong><ol>
+<li>What do the columns represent?</li>
+<li>What do the rows represent?</li>
+</ol>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li><strong>[A:]</strong><ol>
+<li>The collumns represent Contig depth per sample, and variation of that depth for a particular contig in a particular sample.</li>
+<li>The rows represent all the contigs in the assembly</li>
+</ol>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[DO:]</strong></p>
+<ol>
 <li>For clarity, remove all columns except those that display the depth data.</li>
 <li>Check if you have one column per sample.</li>
 <li>Find the option for conditional formatting, filling the cells with colour depending on their content.</li>
 <li>Color all cells in the excel sheet according to a colour gradient with three colors.</li>
-<li>A: Can you identify two rows with a similar colour pattern,</li>
-<li>B: what does that mean if these two have a similar colour pattern?</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li><strong>[Q:] interpret the table</strong><ol>
+<li>Can you identify two rows with a similar colour pattern,</li>
+<li>what does that mean if these two have a similar colour pattern?</li>
+</ol>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li><strong>[A:]</strong><ol>
+<li>Yes, these rows stand out easily.</li>
+<li>If two rows(contigs) have a similar colour pattern over the 6 different samples, this means that the contigs are equally abundant in all these samples. They are likely part of the same genome.</li>
+</ol>
+</li>
 </ol>
 
 </div>

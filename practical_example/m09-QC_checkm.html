@@ -93,7 +93,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -273,7 +273,7 @@ td,
 th {
   padding: 0;
 }
-/*! Source: https://github.com/h5bp/html5-boilerplate/blob/main/src/css/main.css */
+/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
   *,
   *:before,
@@ -13089,16 +13089,30 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Checking-completeness-and-contamination-using-CheckM">Checking completeness and contamination using CheckM<a class="anchor-link" href="#Checking-completeness-and-contamination-using-CheckM">&#182;</a></h2><p>Now that we have the bins made with metabat we can check them for contamination and completeness (quality); for this, we will use CheckM. CheckM provides a set of tools for assessing the quality of genomes recovered from isolates, single cells, or metagenomes. It provides robust estimates of genome completeness and contamination by using collocated sets of genes that are ubiquitous and single-copy within a phylogenetic lineage (also called marker/signature genes). <a href="http://ecogenomics.github.io/CheckM/">http://ecogenomics.github.io/CheckM/</a></p>
-<p>As you will be able to see in the checkm help pages, checkm has a workflow (lineage_wf) that will run all necessary steps to assess bin quality.</p>
-<p>Lineage_wf (lineage-specific workflow) steps: <br></p>
+<h2 id="Checking-completeness-and-contamination-using-CheckM">Checking completeness and contamination using CheckM<a class="anchor-link" href="#Checking-completeness-and-contamination-using-CheckM">&#182;</a></h2><p>Now that we have bins made with <code>metabat2</code> we can check them for contamination and completeness (quality); for this, we will use CheckM.
+<a href="http://ecogenomics.github.io/CheckM/">CheckM</a> is a suite of tools for assessing the quality of bacterial genomes assemblies/bins.
+It estimates genome completeness and contamination by using Single Copy Marker Genes (SCMGs) of a specific phylogenetic lineage.</p>
+<p>As you will be able to see in the checkm help pages, <code>checkm</code> has a workflow (<code>lineage_wf</code>) that will run all necessary steps to assess bin quality.</p>
+<p>Lineage_wf (lineage-specific workflow) steps:</p>
 <ul>
 <li>The tree command places genome bins into a reference genome tree.</li>
 <li>The lineage_set command creates a marker file indicating lineage-specific marker sets suitable for evaluating each individual bin with the most appropriate reference set of markers. </li>
 <li>This marker file is passed to the analyze command to identify marker genes and estimate the completeness and contamination of each genome bin. </li>
-<li>Finally, the qa command can be used to produce different tables summarizing the quality of each genome bin. <br></li>
+<li>Finally, the qa command can be used to produce different tables summarizing the quality of each genome bin.</li>
 </ul>
-<p>Unfortunately, the 'tree' part of this workflow is too memory intensive (about 32Gbytes of RAM (!) ), So we will cheat a bit. <strong> Instead, we will use the <code>checkm taxonomy_wf domain Bacteria</code> command. </strong> Hence, we don't load the full tree to find the most appropriate marker set, but assume all are bacteria (reasonable assumption in this case) and don't look any deeper than that.</p>
+<p>Unfortunately, the 'tree' part of this workflow is too memory intensive (<strong>about 32Gbytes of RAM (!)</strong> ).
+So we will cheat a bit.
+Instead of the <code>lineage_wf</code>, we will use the <code>taxonomy_wf</code>.
+The <code>taxonomy_wf</code> does not determine the lineage of a bin, but checks SCMGs for a lineage that you provide in the commandline.
+Hence, we don't load the full tree to find the most appropriate marker set, but assume all bins are bacteria (reasonable assumption in this case) and don't look any deeper than that.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[DO:] Read the help page of</strong> <code>checkm taxonomy_wf</code><strong>:</strong></p>
 
 </div>
 </div>
@@ -13182,6 +13196,17 @@ Example: checkm taxonomy_wf domain Bacteria ./bins ./output
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The checkm manual may seem somewhat intimidating. 
+However, remember that the options in square brackets are optional <code>[optional argument]</code>. 
+Those without brackets are mandatory.</p>
+<p><strong>[DO:] Run the</strong> <code>checkm taxonomy_wf</code> <strong>on the bins you created:</strong></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
@@ -13250,10 +13275,61 @@ Example: checkm taxonomy_wf domain Bacteria ./bins ./output
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="c1"># Extra: create a summary table</span>
+checkm qa data/checkm_taxonomy/Bacteria.ms data/checkm_taxonomy -f ./data/checkm_taxonomy/checkm_taxonomy_summary.txt
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(metagenomics_practical) [2022-03-23 16:10:09] INFO: CheckM v1.1.3
+[2022-03-23 16:10:09] INFO: checkm qa data/checkm_taxonomy/Bacteria.ms data/checkm_taxonomy -f ./data/checkm_taxonomy/checkm_taxonomy_summary.txt
+[2022-03-23 16:10:09] INFO: [CheckM - qa] Tabulating genome statistics.
+[2022-03-23 16:10:09] INFO: Calculating AAI between multi-copy marker genes.
+[2022-03-23 16:10:09] INFO: Reading HMM info from file.
+[2022-03-23 16:10:09] INFO: Parsing HMM hits to marker genes:
+    Finished parsing hits for 6 of 6 (100.00%) bins.
+[2022-03-23 16:10:10] INFO: QA information written to: ./data/checkm_taxonomy/checkm_taxonomy_summary.txt
+[2022-03-23 16:10:10] INFO: { Current stage: 0:00:01.325 || Total: 0:00:01.325 }
+(metagenomics_practical) </pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre></pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>checkm lineage_wf --help
+<div class=" highlight hl-bash"><pre><span></span><span class="c1"># Extra: run the lineage_wf requiring 30+GB of RAM</span>
+checkm lineage_wf --help
 </pre></div>
 
     </div>
@@ -13335,7 +13411,8 @@ Example: checkm lineage_wf ./bins ./output
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>checkm lineage_wf ./data/bins ./data/checkm_lineage --pplacer_threads <span class="m">1</span> -t <span class="m">4</span> -x fa
+<div class=" highlight hl-bash"><pre><span></span><span class="c1"># Extra: run the lineage_wf requiring 30+GB of RAM</span>
+checkm lineage_wf ./data/bins ./data/checkm_lineage --pplacer_threads <span class="m">1</span> -t <span class="m">4</span> -x fa
 </pre></div>
 
     </div>
@@ -13445,10 +13522,61 @@ Example: checkm lineage_wf ./bins ./output
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="c1"># Extra: create a summary table of the linage_wf</span>
+checkm qa data/checkm_lineage/lineage.ms data/checkm_lineage -f ./data/checkm_lineage/checkm_lineage_summary.txt
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(metagenomics_practical) [2022-03-23 16:10:58] INFO: CheckM v1.1.3
+[2022-03-23 16:10:58] INFO: checkm qa data/checkm_lineage/lineage.ms data/checkm_lineage -f ./data/checkm_lineage/checkm_lineage_summary.txt
+[2022-03-23 16:10:58] INFO: [CheckM - qa] Tabulating genome statistics.
+[2022-03-23 16:10:58] INFO: Calculating AAI between multi-copy marker genes.
+[2022-03-23 16:10:58] INFO: Reading HMM info from file.
+[2022-03-23 16:10:58] INFO: Parsing HMM hits to marker genes:
+    Finished parsing hits for 6 of 6 (100.00%) bins.
+[2022-03-23 16:11:01] INFO: QA information written to: ./data/checkm_lineage/checkm_lineage_summary.txt
+[2022-03-23 16:11:01] INFO: { Current stage: 0:00:02.934 || Total: 0:00:02.934 }
+(metagenomics_practical) </pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre></pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The checkm manual may seem somewhat intimidating. However, remember that the options in square brackets are optional <code>[optional argument]</code>. Those without brackets are mandatory.</p>
+<p>If <code>CheckM</code> doesn't work propperly, you can see an example output <a href="https://github.com/lauralwd/metagenomicspractical/blob/example/data/checkm_taxonomy/checkm_taxonomy_summary.txt">here</a></p>
+<p><strong>[Q:] What can you say about the binning quality</strong></p>
 
 </div>
 </div>
@@ -13456,12 +13584,9 @@ Example: checkm lineage_wf ./bins ./output
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>(think and discuss these questions) <br></p>
-<p>What did you do? <br>
-Where is your output? <br>
-What does your output look like? <br>
-What can you say about the bins with this output? <br>
-What can you say about lineages of the bins?<br></p>
+<p><strong>[A:]</strong> Six bins have a completeness of more than 94%, this is a great score! Contamination is also low in all of these bins.</p>
+<p>One bin does have 50% hetrogeneity, this indicates roughly that although all markers are found, and only found once, these markers are not always found in the 'sets' they are expected to. 
+This bin might be a mix of two very similar strains of the same lineage of bacteria.</p>
 
 </div>
 </div>
@@ -13469,7 +13594,26 @@ What can you say about lineages of the bins?<br></p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can create an extended checkm table with more information.</p>
+<p>A CheckM output of the full <code>lineage_wf</code> is available <a href="https://github.com/lauralwd/metagenomicspractical/blob/example/data/checkm_lineage/checkm_lineage_summary.txt">online here</a></p>
+<p><strong>[Q:]</strong> Is the taxonomy of the bins a surprise given the nature of the sample?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[A:]</strong> No. We expected one cyanobacterium, and found a second. 
+Cyanobacteria are often found in water, so this may be a cyanobacterium living outside this floating plant.</p>
+<p>Burkholderiales and Rhizobiales (alphaproteobacteria) were thought to be associated with Azolla based on the paper linked in the introduction.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Bonus">Bonus<a class="anchor-link" href="#Bonus">&#182;</a></h2><p>You can create an extended checkm table with more information.</p>
 <ol>
 <li>Read the Checkm manual, and find out how to do this.</li>
 <li>Save the table in 'tab-delimited format, so you can download it and open it in Excel/google-sheets/libroffie.</li>
@@ -13489,7 +13633,7 @@ What can you say about lineages of the bins?<br></p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Bonus">Bonus<a class="anchor-link" href="#Bonus">&#182;</a></h1><p>Did you try to vary binning parameters in the previous notebook (M7)? 
+<h1 id="Bonus-2">Bonus 2<a class="anchor-link" href="#Bonus-2">&#182;</a></h1><p>Did you try to vary binning parameters in the previous notebook? 
 If so, run these through Checkm as well.
 Remember to create clear and separate output directories.</p>
 <p>Are the bins of similar quality?</p>
